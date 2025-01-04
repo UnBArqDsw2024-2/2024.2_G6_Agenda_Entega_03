@@ -8,8 +8,8 @@ const EventList = ({ events }) => {
         <p>Nenhum evento criado ainda.</p>
       ) : (
         <ul className='space-y-4'>
-          {events.map((event, index) => (
-            <li key={index} className='border rounded p-4'>
+          {events.map((event) => (
+            <li key={event.id} className='border rounded p-4'>
               <h3 className='font-bold'>{event.title}</h3>
               <p>{event.description}</p>
               <p>
@@ -29,6 +29,7 @@ const EventList = ({ events }) => {
 EventList.propTypes = {
   events: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
