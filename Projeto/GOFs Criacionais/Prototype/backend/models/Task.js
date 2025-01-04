@@ -1,11 +1,9 @@
 class Task {
-  constructor({ title, description, startTime, endTime, isRecurring = false }) {
-    this.id = null;
+  constructor({ id, title, description, startTime }) {
+    this.id = id;
     this.title = title;
     this.description = description;
     this.startTime = startTime;
-    this.endTime = endTime;
-    this.isRecurring = isRecurring;
   }
 
   clone(id) {
@@ -14,8 +12,6 @@ class Task {
       title: this.title,
       description: this.description,
       startTime: this.startTime,
-      endTime: this.endTime,
-      isRecurring: this.isRecurring,
     });
   }
 }

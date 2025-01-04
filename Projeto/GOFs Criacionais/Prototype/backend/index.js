@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 
 import task from './routes/TaskRoute.js';
@@ -5,11 +6,11 @@ import task from './routes/TaskRoute.js';
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
-// Include your routes here
 app.use('/task', task);
 
-const PORT = 3000;
+const PORT = 8080;
 
 app.listen(PORT, async () => {
   console.log(`Servidor rodando: http://localhost:${PORT}`);
