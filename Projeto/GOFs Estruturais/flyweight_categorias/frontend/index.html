@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyweight: Categorias de Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="evento-form">
+        <h1>Criar Evento</h1>
+        
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        
+        <label for="data">Data:</label>
+        <input type="datetime-local" id="data" name="data" required>
+        
+        <h2>Categoria</h2>
+        <label for="categoria-nome">Nome:</label>
+        <input type="text" id="categoria-nome" name="categoria-nome" required>
+        
+        <label for="categoria-cor">Cor:</label>
+        <input type="color" id="categoria-cor" name="categoria-cor" required>
+        
+        <label for="categoria-icone">Ícone:</label>
+        <input type="text" id="categoria-icone" name="categoria-icone" required>
+        
+        <button type="submit">Criar Evento</button>
+    </form>
+
+    <div id="eventos-list"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
