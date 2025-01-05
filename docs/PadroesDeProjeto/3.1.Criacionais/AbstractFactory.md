@@ -58,44 +58,188 @@ Considerando os requisitos da página de login, concluímos de forma unânime, a
 
 ## Código
 
+```python
+from abc import ABC, abstractmethod
+
+# ===================== Abstract Products =====================
+class Usuario(ABC):
+    """
+    Define a interface para objetos Usuario.
+    """
+    @abstractmethod
+    def autenticar(self) -> bool:
+        """
+        Método para autenticar o usuário.
+        """
+        pass
+
+    @abstractmethod
+    def get_info(self) -> dict:
+        """
+        Método para obter informações do usuário.
+        """
+        pass
+
+class Credenciais(ABC):
+    """
+    Define a interface para objetos Credenciais.
+    """
+    @abstractmethod
+    def get_credenciais(self) -> dict:
+      """
+        Método para obter as credenciais de autenticação.
+      """
+      pass
+
+# ===================== Concrete Products =====================
+class UsuarioEmailSenha(Usuario):
+    """
+    Implementação concreta de Usuario para autenticação com e-mail e senha.
+    """
+    def __init__(self, credenciais):
+        self.credenciais = credenciais
+
+    def autenticar(self) -> bool:
+        #Simulando autenticação por email e senha.
+        email = self.credenciais.get_credenciais().get("email")
+        senha = self.credenciais.get_credenciais().get("senha")
+        if email == "teste@email.com" and senha == "senha123":
+          return True
+        return False
+
+    def get_info(self) -> dict:
+        return {"tipo": "email_senha", "email": self.credenciais.get_credenciais().get("email")}
+
+class UsuarioGoogle(Usuario):
+    """
+    Implementação concreta de Usuario para autenticação com Google.
+    """
+    def __init__(self, credenciais):
+      self.credenciais = credenciais
+
+    def autenticar(self) -> bool:
+        #Simulando autenticação com Google.
+       token = self.credenciais.get_credenciais().get("token")
+       if token == "token123":
+         return True
+       return False
+
+    def get_info(self) -> dict:
+        return {"tipo": "google", "email": self.credenciais.get_credenciais().get("email")}
+
+class CredenciaisEmailSenha(Credenciais):
+  """
+  Implementação concreta de Credenciais para autenticação com email e senha.
+  """
+  def __init__(self, email, senha):
+    self._email = email
+    self._senha = senha
+  
+  def get_credenciais(self) -> dict:
+    return {"email": self._email, "senha": self._senha}
+
+class CredenciaisGoogle(Credenciais):
+  """
+  Implementação concreta de Credenciais para autenticação com Google.
+  """
+  def __init__(self, token, email):
+    self._token = token
+    self._email = email
+  
+  def get_credenciais(self) -> dict:
+     return {"token": self._token, "email": self._email}
+
+# ===================== Abstract Factory =====================
+class AutenticacaoFactory(ABC):
+    """
+    Define a interface para as fábricas de autenticação.
+    """
+    @abstractmethod
+    def criar_usuario(self, credenciais: Credenciais) -> Usuario:
+        """
+        Método abstrato para criar um objeto Usuario.
+        """
+        pass
+
+    @abstractmethod
+    def criar_credenciais(self, credenciais_data:dict) -> Credenciais:
+        """
+        Método abstrato para criar um objeto Credenciais.
+        """
+        pass
 
 
-```Java
+# ===================== Concrete Factories =====================
+class AutenticacaoEmailSenhaFactory(AutenticacaoFactory):
+    """
+    Fábrica concreta para autenticação com e-mail e senha.
+    """
+    def criar_usuario(self, credenciais: Credenciais) -> Usuario:
+      """
+      Cria um objeto UsuarioEmailSenha
+      """
+      return UsuarioEmailSenha(credenciais)
 
-// Classe  - estrutura básica
+    def criar_credenciais(self, credenciais_data: dict) -> Credenciais:
+        """
+        Cria um objeto CredenciaisEmailSenha.
+        """
+        return CredenciaisEmailSenha(credenciais_data.get("email"),credenciais_data.get("senha"))
 
+class AutenticacaoGoogleFactory(AutenticacaoFactory):
+    """
+    Fábrica concreta para autenticação com Google.
+    """
+    def criar_usuario(self, credenciais: Credenciais) -> Usuario:
+        """
+        Cria um objeto UsuarioGoogle.
+        """
+        return UsuarioGoogle(credenciais)
+
+    def criar_credenciais(self, credenciais_data: dict) -> Credenciais:
+      """
+      Cria um objeto CredenciaisGoogle.
+      """
+      return CredenciaisGoogle(credenciais_data.get("token"), credenciais_data.get("email"))
+
+# ===================== Client Code (Exemplo) =====================
+def autenticar_usuario(factory: AutenticacaoFactory, credenciais_data: dict) -> dict:
+    """
+    Função de exemplo que utiliza as fábricas para autenticar um usuário.
+    """
+    credenciais = factory.criar_credenciais(credenciais_data)
+    usuario = factory.criar_usuario(credenciais)
+    if usuario.autenticar():
+      return {"autenticado": True, "info": usuario.get_info()}
+    else:
+        return {"autenticado": False, "info": {}}
+
+
+# ===================== Flask Application (Exemplo) =====================
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/autenticar", methods=["POST"])
+def autenticar():
+    """
+    Rota que autentica o usuário com base no método de autenticação.
+    """
+    data = request.json
+    tipo_autenticacao = data.get("tipo")
+    credenciais = data.get("credenciais")
+    if tipo_autenticacao == "email_senha":
+      factory = AutenticacaoEmailSenhaFactory()
+      resultado = autenticar_usuario(factory, credenciais)
+      return jsonify(resultado), 200
+    elif tipo_autenticacao == "google":
+      factory = AutenticacaoGoogleFactory()
+      resultado = autenticar_usuario(factory, credenciais)
+      return jsonify(resultado), 200
+    else:
+      return jsonify({"erro": "Tipo de autenticação inválida"}), 400
 ```
-
-``` java
-// Classe  - cria objetos Avaliacao
-
-```
-
-``` java
-
-```
-
-``` java
-
-```
-
-
-
-``` java
-
-```
-
-
-### Imagens
-
-
-<p style="text-align: center"><b>Figura 2:</b> Testando Via Postman</p>
-<div align="center">
-</div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
-
-
-
 
 ## Referências
 > <a>1.<a/> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br>
@@ -106,5 +250,5 @@ Considerando os requisitos da página de login, concluímos de forma unânime, a
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 04/01/2025 | Estrutura do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | [Gabriel Souza](https://github.com/GabrielMS00) |
-| `1.1`  | 05/01/2025 | Complementação da metodologia e ajuste das referências | [Gabriel Souza](https://github.com/GabrielMS00) | |
+| `1.0`  |04/01/2025| Estrutura do artefato | [Julia Vitória](https://github.com/Juhvitoria4) | |
+| `1.1`  |05/01/2025| Código | [Gabriel Moura](https://github.com/thegm445) | |
