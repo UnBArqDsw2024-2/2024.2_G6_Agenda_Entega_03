@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Criado</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="confirmacao">
+        <!-- Ícone de confirmação -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm-2.11 17.28l-4.2-4.2 1.41-1.41L9.9 14.05l7.28-7.28 1.41 1.41z"/>
+        </svg>
+
+        <!-- Mensagem de sucesso -->
+        <h1>Evento Criado com Sucesso!</h1>
+
+        <!-- Detalhes do evento -->
+        <div id="detalhes-evento">
+            <p><strong>Título:</strong> <span id="titulo"></span></p>
+            <p><strong>Data:</strong> <span id="data"></span></p>
+            <p><strong>Local:</strong> <span id="local"></span></p>
+            <p><strong>Descrição:</strong> <span id="descricao"></span></p>
+            <p><strong>Lembrete:</strong> <span id="lembrete"></span></p>
+            <p><strong>Categoria:</strong> <span id="categoria"></span></p>
+            <p><strong>Prioridade:</strong> <span id="prioridade"></span></p>
+        </div>
+
+        <!-- Link para voltar ao formulário -->
+        <a href="index.html">Voltar para o formulário</a>
+    </div>
+
+    <script>
+        // Captura os parâmetros da URL
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("titulo").textContent = params.get("titulo") || "Não informado";
+        document.getElementById("data").textContent = params.get("data") || "Não informado";
+        document.getElementById("local").textContent = params.get("local") || "Não informado";
+        document.getElementById("descricao").textContent = params.get("descricao") || "Não informado";
+        document.getElementById("lembrete").textContent = params.get("lembrete") === "true" ? "Sim" : "Não";
+        document.getElementById("categoria").textContent = params.get("categoria") || "Não informado";
+        document.getElementById("prioridade").textContent = params.get("prioridade") || "Não informado";
+    </script>
+</body>
+</html>

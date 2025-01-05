@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendador de Eventos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form id="evento-form">
+        <h1>Agendar Evento</h1>
+        
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        
+        <label for="data">Data:</label>
+        <input type="datetime-local" id="data" name="data" required>
+        
+        <label for="local">Local:</label>
+        <input type="text" id="local" name="local">
+        
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao"></textarea>
+        
+        <label for="categoria">Categoria:</label>
+        <input type="text" id="categoria" name="categoria">
+
+        <label for="prioridade">Prioridade:</label>
+        <input type="text" id="prioridade" name="prioridade">
+
+        <label>
+            <input type="checkbox" id="lembrete" name="lembrete">
+            Ativar Lembrete
+        </label>
+        
+        <button type="submit">Criar Evento</button>
+    </form>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
