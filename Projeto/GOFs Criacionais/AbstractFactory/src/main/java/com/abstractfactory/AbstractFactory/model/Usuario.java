@@ -16,7 +16,6 @@ public class Usuario {
   private String email;
   private String senha;
   private String tipo; // "EMAIL" ou "GOOGLE"
-  private String googleId; // ID do Google
 
   // Getters e Setters
   public Long getId() { return id; }
@@ -29,6 +28,4 @@ public class Usuario {
   public void setSenha(String senha) { this.senha = senha; }
   public String getTipo() { return tipo; }
   public void setTipo(String tipo) { this.tipo = tipo; }
-  public String getGoogleId() { return googleId; }
-  public void setGoogleId(String googleId) { this.googleId = googleId; }
 }

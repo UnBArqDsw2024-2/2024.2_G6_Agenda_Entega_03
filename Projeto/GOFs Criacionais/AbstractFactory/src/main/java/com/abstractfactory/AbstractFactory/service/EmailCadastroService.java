@@ -13,6 +13,9 @@ public class EmailCadastroService implements ICadastro {
 
   @Override
   public void cadastrar(String nome, String email, String senha) {
+    if (repository.findByEmail(email) != null) {
+      throw new RuntimeException("Usuário já cadastrado");
+    }
     Usuario usuario = new Usuario();
     usuario.setNome(nome);
     usuario.setEmail(email);
