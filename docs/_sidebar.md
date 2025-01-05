@@ -7,7 +7,6 @@
   - [3. Desenho de Software (Padrões de Projeto)](./PadroesDeProjeto/3.PadroesDeProjeto.md)
     - [3.1. Padrões de Projeto GoFs Criacionais](./PadroesDeProjeto/3.1.Criacionais/GoFsCriacionais.md)
       - [3.1.1. Abstract Factory](./PadroesDeProjeto/3.1.Criacionais/AbstractFactory.md)
-      - [3.1.2. Factory Method](./PadroesDeProjeto/3.1.Criacionais/FactoryMethod.md)
     - [3.2. Padrões de Projeto GoFs Estruturais](./PadroesDeProjeto/3.2.GoFsEstruturais.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.GoFsComportamentais.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
