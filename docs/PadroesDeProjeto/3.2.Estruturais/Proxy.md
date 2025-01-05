@@ -4,7 +4,7 @@
 
 O Proxy é um padrão de projeto estrutural que fornece um substituto ou placeholder para outro objeto. Um proxy controla o acesso ao objeto original, permitindo que você faça algo antes ou depois que a solicitação chega ao objeto original. É frequentemente usado para adicionar uma camada extra de controle sobre operações que podem ser custosas ou precisam de segurança adicional.
 
-## Elementos Principais do Abstract Factory:
+## Elementos Principais do Proxy:
 
 - **Interface (Subject)**: 
     - Define a interface comum entre o Proxy e o RealSubject.
