@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações da Agenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Configurações da Agenda</h1>
+
+    <form id="config-form">
+        <label for="fuso_horario">Fuso Horário:</label>
+        <input type="text" id="fuso_horario" name="fuso_horario" placeholder="Ex: UTC">
+
+        <label for="idioma">Idioma:</label>
+        <input type="text" id="idioma" name="idioma" placeholder="Ex: pt-BR">
+
+        <label for="tema">Tema:</label>
+        <select id="tema" name="tema">
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+        </select>
+
+        <button type="submit">Atualizar Configurações</button>
+    </form>
+
+    <h2>Configurações Atuais:</h2>
+    <pre id="config-output"></pre>
+
+    <script src="app.js"></script>
+</body>
+</html>
