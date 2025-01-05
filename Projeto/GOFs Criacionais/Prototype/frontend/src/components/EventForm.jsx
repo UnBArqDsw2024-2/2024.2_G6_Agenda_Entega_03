@@ -6,6 +6,7 @@ const EventForm = ({ onCreateEvents }) => {
   const [startDate, setStartDate] = useState('');
   const [isAllDay, setIsAllDay] = useState(false);
   const [recurrence, setRecurrence] = useState('none');
+  const [recurrence1, setRecurrence1] = useState('none');
   const [showCustomRecurrence, setShowCustomRecurrence] = useState(false);
   const [customRecurrence, setCustomRecurrence] = useState({
     frequency: 'daily',
@@ -15,15 +16,45 @@ const EventForm = ({ onCreateEvents }) => {
   });
 
   const handleRecurrenceChange = (value) => {
-    setRecurrence(value);
+    setRecurrence1(value);
     setShowCustomRecurrence(value === 'custom');
     if (value !== 'custom') {
-      setCustomRecurrence({
-        frequency: 'daily',
-        endOption: 'never',
-        endDate: '',
-        occurrences: 1,
-      });
+      if(value === 'daily'){
+        setRecurrence({
+          frequency: 'daily',
+          endOption: 'never',
+          endDate: '',
+          occurrences: "365",
+        });
+
+      }
+      if(value === 'weekly'){
+        setRecurrence({
+          frequency: 'weekly',
+          endOption: 'never',
+          endDate: '',
+          occurrences: "52",
+        });
+
+      }
+      if(value === 'monthly'){
+        setRecurrence({
+          frequency: 'monthly',
+          endOption: 'never',
+          endDate: '',
+          occurrences: "12",
+        });
+
+      }
+      if(value === 'yearly'){
+        setRecurrence({
+          frequency: 'yearly',
+          endOption: 'never',
+          endDate: '',
+          occurrences: "5",
+        });
+
+      }
     }
   };
 
@@ -85,7 +116,7 @@ const EventForm = ({ onCreateEvents }) => {
           <div>
             <label className='block font-medium'>Tipo de Recorrência</label>
             <select
-              value={recurrence}
+              value={recurrence1}
               onChange={(e) => handleRecurrenceChange(e.target.value)}
               className='border rounded p-2 w-full'
             >
@@ -132,7 +163,6 @@ const EventForm = ({ onCreateEvents }) => {
                   className='border rounded p-2 w-full'
                 >
                   <option value='never'>Nunca</option>
-                  <option value='endDate'>Em uma data específica</option>
                   <option value='afterOccurrences'>Após X ocorrências</option>
                 </select>
               </div>
