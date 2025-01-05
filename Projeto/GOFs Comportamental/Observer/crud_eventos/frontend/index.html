@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Eventos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerenciador de Eventos</h1>
+
+    <!-- Formulário para criar/editar eventos -->
+    <form id="event-form">
+      <input type="hidden" id="event-id">
+      <label for="title">Título:</label>
+      <input type="text" id="title" placeholder="Título do evento" required>
+      <label for="date">Data:</label>
+      <input type="date" id="date" required>
+      <label for="time">Hora:</label>
+      <input type="time" id="time" required>
+      <button type="submit">Salvar</button>
+    </form>
+
+    <hr>
+
+    <!-- Lista de eventos -->
+    <h2>Eventos</h2>
+    <ul id="events-list"></ul>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

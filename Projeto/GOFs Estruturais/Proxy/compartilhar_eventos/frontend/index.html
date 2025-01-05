@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda - Compartilhamento de Eventos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Agenda - Compartilhamento de Eventos</h1>
+
+    <!-- Seção para visualizar eventos -->
+    <div class="card">
+      <h2>Visualizar Evento</h2>
+      <label for="event-id">ID do Evento:</label>
+      <input type="number" id="event-id" placeholder="Ex: 1">
+      <label for="user-id-view">ID do Usuário:</label>
+      <input type="text" id="user-id-view" placeholder="Ex: user1">
+      <button id="view-event-btn">Visualizar Evento</button>
+      <p id="event-output" class="hidden"></p>
+    </div>
+
+    <hr>
+
+    <!-- Seção para compartilhar eventos -->
+    <div class="card">
+      <h2>Compartilhar Evento</h2>
+      <label for="event-id-share">ID do Evento:</label>
+      <input type="number" id="event-id-share" placeholder="Ex: 1">
+      <label for="user-id-share">Seu ID de Usuário:</label>
+      <input type="text" id="user-id-share" placeholder="Ex: user1">
+      <label for="target-user-id">ID do Usuário para Compartilhar:</label>
+      <input type="text" id="target-user-id" placeholder="Ex: user2">
+      <button id="share-event-btn">Compartilhar Evento</button>
+      <p id="share-output"></p>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

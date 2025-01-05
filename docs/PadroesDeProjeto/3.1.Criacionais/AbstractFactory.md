@@ -33,7 +33,14 @@ O uso do padrão **Abstract Factory** é altamente vantajoso, especialmente em c
 
 ## Metodologia
 
+No sistema de Agenda, de acordo com o [diagrama de classes](https://unbarqdsw2024-2.github.io/2024.2_G6_Agenda_Entrega_02/#/./foco1/d_classes) existem duas maneiras distintas para um usuário realizar seu login: a primeira utiliza um e-mail e uma senha previamente cadastrados; a segunda, uma sincronização direta com uma conta do Google. Dado que o sistema foi projetado com foco em escalabilidade, especialmente no que diz respeito às funcionalidades de login, a adoção do padrão de design criacional <b>Abstract Factory</b> foi considerada viável para abstrair o processo de login. Essa abordagem permite que o código cliente permaneça desacoplado das implementações concretas do objeto Usuario.
 
+A escolha do padrão Abstract Factory oferece os seguintes aspectos positivos para o desenvolvimento da aplicação:
+
+- Facilidade de expansão: Com a possibilidade de implementar novos métodos de login, como autenticação por redes sociais (por exemplo, Facebook ou X), o uso do Abstract Factory oferece uma solução robusta. Ele permite que futuras extensões sejam realizadas de forma simples e organizada, sem impactar o código existente.
+- Apoio ao desenvolvimento de testes: O Abstract Factory facilita a criação de objetos simulados (mocks) para testes automatizados. Dessa forma, fábricas específicas podem ser desenvolvidas para retornar implementações simuladas, contribuindo significativamente para a realização de testes abrangentes e eficazes na área de login.
+
+Considerando os requisitos da página de login, concluímos de forma unânime, após uma reunião do grupo, que o padrão de design <b>Abstract Factory</b> atende às necessidades identificadas. Esse padrão oferece as vantagens necessárias para uma implementação eficiente dessa funcionalidade, facilitando o processo de desenvolvimento e contribuindo para a qualidade do produto.
 
 ## Modelagem
 
@@ -91,12 +98,13 @@ O uso do padrão **Abstract Factory** é altamente vantajoso, especialmente em c
 
 
 ## Referências
-> 
->
+> <a>1.<a/> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br>
+> <a>2.<a/> FREEMAN, Eric; FREEMAN, Elisabeth Robson. Head First Design Patterns: A Brain-Friendly Guide. 2. ed. Sebastopol: O'Reilly Media, 2020. <br>
 > 
 
 ## Histórico de Versões
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  |04/01/2025| Estrutura do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | |
+| `1.0`  | 04/01/2025 | Estrutura do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | [Gabriel Souza](https://github.com/GabrielMS00) |
+| `1.1`  | 05/01/2025 | Complementação da metodologia e ajuste das referências | [Gabriel Souza](https://github.com/GabrielMS00) | |
