@@ -60,10 +60,6 @@ Essa implementação promove um sistema seguro e eficiente, garantindo que o com
 
 ## Modelagem
 
-![Diagrama Proxy](\docs\images\3.2.Estruturais\proxy.png)
-
-<img src="https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03/blob/17e742de91f4549832cd660fb8fa6b65a2316ca4/docs/images/3.2.Estruturais/proxy.png" alt="Descrição da imagem" />
-
 ![Diagrama Proxy](https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03/blob/17e742de91f4549832cd660fb8fa6b65a2316ca4/docs/images/3.2.Estruturais/proxy.png)
 
 <p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Proxy.</p>
