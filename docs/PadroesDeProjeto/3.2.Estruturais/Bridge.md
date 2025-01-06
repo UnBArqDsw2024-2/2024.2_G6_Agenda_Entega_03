@@ -313,4 +313,4 @@ if __name__ == "__main__":
 
 | Versão | Data       | Descrição                    | Autor(es)                     | Data de revisão | Revisor(es) |
 |--------|------------|------------------------------|--------------------------------|-----------------|-------------|
-| `1.0`  | 23/12/2024 | Versão inicial da documentação.   | João Barreto e Johnny da Ponte| -               | -           |
+| `1.0`  | 23/12/2024 | Versão inicial da documentação.   | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -               | -           |

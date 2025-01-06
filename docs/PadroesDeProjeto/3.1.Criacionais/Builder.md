@@ -161,6 +161,18 @@ def criar_evento():
 
 ---
 
+## Execução do Projeto
+
+Abaixo, estão as imagens da funcionalidade de Criação de Eventos executada:
+
+1. Criação do Evento:
+
+![Criacao do Evento](/2024.2_G6_Agenda_Entega_03/docs/images/3.1.Criacionais/CriacaoEvento.png)
+
+2. Tela de Sucesso:
+
+![Tela de Sucesso](/2024.2_G6_Agenda_Entega_03/docs/images/3.1.Criacionais/TelaSucessoCriacao.png)
+
 ## Vantagens do Padrão Builder no Projeto
 
 1. **Personalização:** Permite criar eventos personalizados de maneira estruturada.
@@ -173,4 +185,5 @@ def criar_evento():
 
 | Versão | Data       | Descrição                  | Autor(es)                     | Data de Revisão | Revisor(es) |
 |--------|------------|----------------------------|--------------------------------|-----------------|-------------|
-| `1.0`  | 06/01/2025 | Versão inicial do projeto. | João Barreto e Johnny da Ponte| -               | -           |
+| `1.0`  | 06/01/2025 | Versão inicial do projeto. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -               | -           |
+| `1.1`  | 06/01/2025 | Adicionando imagens do projeto rodando. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -               | -           |
