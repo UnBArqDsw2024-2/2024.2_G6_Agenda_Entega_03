@@ -103,6 +103,6 @@ cd agendador_eventos
 
 ## Histórico de Versão
 
-| Versão | Data | Descrição | Autor(es) | Data de revisão | Revisor(es) |
+| Versão | Data | Descrição | Autor(es) |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| `1.0` | 23/12/2024  | Versão inicial do projeto. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | - | - |
+| `1.0` | 23/12/2024  | Versão inicial do projeto. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) |
