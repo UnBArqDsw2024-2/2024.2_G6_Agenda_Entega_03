@@ -41,13 +41,12 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
 
 ## Modelagem
 
-![Diagrama Observer](https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03/blob/528378b2ced4579f90c408a871dcd6aa44e8d440/docs/PadroesDeProjeto/images/observer.png)
-
-<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Observer.</p>
+<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Observer</p>
 <div align="center">
-
+  <img src="./images/3.3.Comportamentais/observer.png" width="1050px" >
 </div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>, 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>,, 2025</p></font>
+
 
 ## Implementação
 

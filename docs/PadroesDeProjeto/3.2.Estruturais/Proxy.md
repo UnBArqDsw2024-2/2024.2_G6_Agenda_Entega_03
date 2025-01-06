@@ -60,13 +60,12 @@ Essa implementação promove um sistema seguro e eficiente, garantindo que o com
 
 ## Modelagem
 
-![Diagrama Proxy](docs\images\3.2.Estruturais\proxy.png)
-
-<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Proxy.</p>
+<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Proxy</p>
 <div align="center">
-
+  <img src="./images/3.2.Estruturais/proxy.png" width="1050px" >
 </div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>, 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>,, 2025</p></font>
+
 
 ## Implementação
 
