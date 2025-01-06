@@ -76,6 +76,39 @@ A pasta de código fonte está localizada em `Projeto/GOFs Criacionais/AbstractF
 
 ### Back-end
 
+---
+
+## Estrutura do Projeto
+
+A estrutura básica do projeto é a seguinte:
+
+```
+src/
+├── main/
+│   ├── java/
+│   │   ├── controller/
+│   │   │   └── UsuarioController.java
+│   │   ├── factory/
+│   │   │   ├── CadastroFactory.java
+│   │   │   └── LoginFactory.java
+│   │   ├── model/
+│   │   │   └── Usuario.java
+│   │   ├── repository/
+│   │   │   └── UsuarioRepository.java
+│   │   ├── service/
+│   │   │   ├── ICadastro.java
+│   │   │   ├── ILogin.java
+│   │   │   ├── EmailCadastroService.java
+│   │   │   ├── EmailLoginService.java
+│   │   │   └── GoogleLoginService.java
+│   │   └── Application.java
+│   └── resources/
+│       ├── application.properties
+
+```
+
+---
+
 #### 1. **Estrutura básica da Factory**
 ```java
 package com.abstractfactory.AbstractFactory.factory;

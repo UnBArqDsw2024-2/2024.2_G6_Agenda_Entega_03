@@ -60,13 +60,12 @@ Essa implementação promove um sistema seguro e eficiente, garantindo que o com
 
 ## Modelagem
 
-![Diagrama Proxy](https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03/blob/17e742de91f4549832cd660fb8fa6b65a2316ca4/docs/images/3.2.Estruturais/proxy.png)
-
-<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Proxy.</p>
+<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Proxy</p>
 <div align="center">
-
+  <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/19dedd0c-22f4-4412-b249-bb33ba188ed0" id="LtZG1916LoEq"></iframe></div>
 </div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>, 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>,, 2025</p></font>
+
 
 ## Implementação
 
@@ -161,4 +160,4 @@ Essa implementação promove um sistema seguro e eficiente, garantindo que o com
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Criacão do artefato | [Paulo Borba](https://github.com/paulohborba) e [João Barreto](https://github.com/JoaoBarreto03) |  |
+| `1.0`  | 05/01/2025 | Criacão do artefato | [Paulo Borba](https://github.com/paulohborba) e [João Barreto](https://github.com/JoaoBarreto03) |   [Bianca Patrocínio](https://github.com/BiancaPatrocinio7)  |

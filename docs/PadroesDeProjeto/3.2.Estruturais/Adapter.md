@@ -84,6 +84,31 @@ Esse design promove flexibilidade e escalabilidade, permitindo que novos adaptad
 
 ---
 
+## Estrutura do Projeto
+
+A estrutura básica do projeto é a seguinte:
+
+```
+src/
+├── main/
+│   ├── java/
+│   │   ├── com/
+│   │   │   ├── adapter/
+│   │   │   │   ├── adapter/
+│   │   │   │   │   ├── EmailAuthAdapter.java
+│   │   │   │   │   └── GoogleAuthAdapter.java
+│   │   │   │   ├── controller/
+│   │   │   │   │   └── AuthController.java
+│   │   │   │   ├── model/
+│   │   │   │   │   └── Usuario.java
+│   │   │   │   ├── repository/
+│   │   │   │   │   └── UsuarioRepository.java
+│   │   │   │   ├── service/
+│   │   │   │   │   └── AuthService.java
+│   │   │   │   └── AdapterApplication.java
+
+```
+
 ### **Código**
 
 #### 1. **Estrutura Básica do Adapter**
