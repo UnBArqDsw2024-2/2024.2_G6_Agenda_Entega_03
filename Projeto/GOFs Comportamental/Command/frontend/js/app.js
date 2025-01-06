@@ -12,8 +12,13 @@ document.getElementById("config-form").addEventListener("submit", async (e) => {
         body: JSON.stringify({ tema, notificacoes, idioma }),
     });
 
-    const data = await response.json();
-    alert(data.message);
+    if (response.ok) {
+        // Redirecionar para a página de confirmação
+        window.location.href = "confirmacao.html";
+    } else {
+        const data = await response.json();
+        alert(data.message);
+    }
 });
 
 document.getElementById("undo-btn").addEventListener("click", async () => {
