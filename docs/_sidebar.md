@@ -8,6 +8,7 @@
     - [3.1. Padrões de Projeto GoFs Criacionais](./PadroesDeProjeto/3.1.Criacionais/GoFsCriacionais.md)
       - [3.1.1. Abstract Factory](./PadroesDeProjeto/3.1.Criacionais/AbstractFactory.md)
       - [3.1.2. Builder](./PadroesDeProjeto/3.1.Criacionais/Builder.md)
+      - [3.1.3. Singleton](./PadroesDeProjeto/3.1.Criacionais/Singleton.md)
 
     - [3.2. Padrões de Projeto GoFs Estruturais](./PadroesDeProjeto/3.2.GoFsEstruturais.md)
       - [3.2.1. Bridge](./PadroesDeProjeto/3.2.Estruturais/Bridge.md)
