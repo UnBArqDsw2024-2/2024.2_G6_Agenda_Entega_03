@@ -10,26 +10,25 @@ Esse padrão é útil quando queremos integrar sistemas com interfaces diferente
 ### **Elementos Principais do Adapter**
 
 O padrão **Adapter** é composto por algumas classes e interfaces, que desempenham os seguintes papéis:
-
 ### **1. Client (Cliente)**
 
-O **Cliente** é a classe que utiliza os objetos adaptados. Ele chama métodos da interface que está sendo adaptada, sem se preocupar com as diferenças entre as interfaces. O cliente interage com a interface adaptada sem a necessidade de entender sua implementação interna.
+O **Cliente** é a classe que utiliza os objetos adaptados. Ele chama métodos da interface **Target** (Alvo) sem se preocupar com as diferenças entre as interfaces. O cliente interage com a interface adaptada sem a necessidade de entender sua implementação interna. No exemplo apresentado, a classe **AuthController** desempenha o papel de Cliente.
 
 ### **2. Target (Alvo)**
 
-A **Target** é a interface que define os métodos que o cliente espera que o adaptador implemente. Ela especifica a interface padrão com a qual o cliente pode interagir.
+O **Target** é a interface que define os métodos esperados pelo cliente. Ela especifica a interface padrão com a qual o cliente pode interagir. No exemplo, essa interface é representada por **AuthService**, que declara os métodos `login` e `register`.
 
 ### **3. Adapter (Adaptador)**
 
-O **Adapter** implementa a interface **Target** e traduz as chamadas para o sistema original. Ele é responsável por adaptar a interface de um sistema para que ela seja compatível com a interface do cliente.
+O **Adapter** implementa a interface **Target** e traduz as chamadas feitas pelo cliente para o sistema original. Ele é responsável por adaptar a interface do sistema de origem para que seja compatível com a interface esperada pelo cliente. Exemplos de **Adapter** no código são as classes **EmailAuthAdapter** e **GoogleAuthAdapter**.
 
 ### **4. Adaptee (Adaptado)**
 
-O **Adaptee** é o sistema ou classe que precisa ser adaptado. Ele contém a implementação original, mas sua interface não é compatível com a interface que o cliente espera. O **Adapter** é responsável por tornar essa classe utilizável.
+O **Adaptee** é o sistema ou classe que precisa ser adaptado. Ele contém a implementação original, mas sua interface não é compatível com a interface que o cliente espera. No exemplo, o **Adaptee** é representado pelo repositório **UsuarioRepository**, que fornece as operações específicas para gerenciamento de usuários.
 
 ### **5. ConcreteAdapter (Adaptador Concreto)**
 
-O **ConcreteAdapter** é a implementação concreta do **Adapter** que traduz as chamadas da interface do cliente para os métodos correspondentes do **Adaptee**.
+No contexto apresentado, o papel de "Adaptador Concreto" é desempenhado diretamente pelas classes **EmailAuthAdapter** e **GoogleAuthAdapter**, que são implementações específicas do **Adapter**. Cada uma delas traduz as chamadas do cliente (via interface **Target**) para interagir corretamente com o **Adaptee**. Portanto, a noção de "ConcreteAdapter" não é uma entidade separada, mas corresponde às implementações concretas do adaptador.
 
 ---
 
@@ -67,11 +66,19 @@ A implementação do **Adapter** foi realizada utilizando a arquitetura **Java**
 
 ### Diagrama 
 
-A seguir, apresentamos o diagrama de classes que ilustra a relação entre as classes envolvidas na implementação do padrão **Adapter**.
+O diagrama apresentado ilustra a aplicação do padrão de projeto Adapter para gerenciar diferentes estratégias de autenticação no sistema. A interface AuthService atua como um contrato comum, definindo os métodos essenciais para autenticação: login e register.
 
-<p style="text-align: center"><b>Figura 1:</b> Diagrama de classes do Adapter</p>
+As classes EmailAuthAdapter e GoogleAuthAdapter implementam a interface, adaptando o comportamento para as necessidades específicas de cada tipo de autenticação:
+
+O EmailAuthAdapter verifica credenciais com base em e-mail e senha, interagindo com a base de dados para validar e registrar usuários.
+O GoogleAuthAdapter foca em autenticação via contas do Google, criando registros automaticamente se o e-mail ainda não estiver cadastrado.
+A entidade Usuario representa os dados persistidos, como nome, e-mail, senha e tipo de autenticação. Os adaptadores utilizam essa classe para validação e armazenamento no repositório, unificando o gerenciamento de usuários.
+
+Esse design promove flexibilidade e escalabilidade, permitindo que novos adaptadores de autenticação sejam adicionados com facilidade, mantendo a coerência e a reutilização de código por meio da interface comum.
+
+<p style="text-align: center"><b>Figura 1:</b> Diagrama usando o Adapter</p>
 <div align="center">
-<div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/4ccd5935-d4a1-4c06-9a1a-68f158d9aed4" id="IaWGJ19rVl4A"></iframe></div>
+  <img src="./images/3.2.Estruturais/diagramaAdaptor.png" width="1050px" >
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
@@ -296,5 +303,5 @@ Neste exemplo, o cliente interage com a interface comum do `AuthService`, sem se
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Estrutura do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |  |
+| `1.0`  | 05/01/2025 | Back-end e documentação do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |  |
 

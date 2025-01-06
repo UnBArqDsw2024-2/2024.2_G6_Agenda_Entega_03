@@ -32,7 +32,7 @@ git clone https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03.git
 Entre na pasta do projeto:
 
 ```bash
-cd Projeto/GOFs Criacionais/AbstractFactory/back-end/AbstractFactory
+cd Projeto/GOFs Estruturais/Adapter/back-end/Adapter
 ```
 
 ### Passo 3: Instalar as Dependências
