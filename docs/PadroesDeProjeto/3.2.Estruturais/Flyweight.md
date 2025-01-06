@@ -63,9 +63,147 @@ O padrão Flyweight é especialmente útil em situações onde a criação e man
 
 ## Metodologia
 
+Para aplicar o padrão Flyweight, seguimos uma abordagem incremental, que permite validar a eficácia do padrão à medida que os componentes são desenvolvidos:
+
+1. **Análise do Domínio e Identificação de Estados**:
+   - O sistema de gerenciamento de eventos foi analisado para identificar atributos comuns entre as categorias (estado intrínseco) e atributos específicos de cada evento (estado extrínseco).
+   - Atributos como **nome**, **cor** e **ícone** foram definidos como parte do estado intrínseco.
+
+2. **Implementação do Flyweight**:
+   - A classe `CategoriaFlyweight` foi implementada para gerenciar os estados intrínsecos.
+   - Uma fábrica (`Flyweight Factory`) foi desenvolvida para gerenciar as instâncias de `CategoriaFlyweight`, evitando duplicações.
+
+3. **Criação de Eventos**:
+   - A classe `Evento` foi projetada para incluir um título, data e uma referência à categoria compartilhada.
+   - O estado extrínseco (específico do evento) é armazenado diretamente na instância de `Evento`.
+
+4. **Testes e Validação**:
+   - Testamos o sistema criando eventos com diferentes categorias, garantindo que as instâncias de categorias compartilhadas fossem reutilizadas corretamente.
+   - Monitoramos o consumo de memória para validar os ganhos obtidos com o Flyweight.
+
 ## Modelagem
 
+### Diagrama de Classes
+
+```plaintext
++--------------------+          +------------------------+
+|  CategoriaFlyweight |<--------|      FlyweightFactory  |
++--------------------+          +------------------------+
+| - nome             |          | - categorias: dict     |
+| - cor              |          | + get_flyweight(...)   |
+| - icone            |          |                        |
++--------------------+          +------------------------+
+        ^
+        |
+        |
++--------------------+
+|      Evento        |
++--------------------+
+| - titulo           |
+| - data             |
+| - categoria:       |
+|   CategoriaFlyweight|
++--------------------+
+```
+
 ## Código
+
+O código é dividio em front-end e back-end. Por ser uma aplicação muito simples, o back-end inteiro se dispõe no arquivo main.py:
+
+```python
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+# Flyweight: CategoriaFlyweight
+class CategoriaFlyweight:
+    _instances = {}
+
+    def __new__(cls, nome, cor, icone):
+        key = (nome, cor, icone)
+        if key not in cls._instances:
+            instance = super().__new__(cls)
+            instance.nome = nome
+            instance.cor = cor
+            instance.icone = icone
+            cls._instances[key] = instance
+        return cls._instances[key]
+
+    def to_dict(self):
+        return {"nome": self.nome, "cor": self.cor, "icone": self.icone}
+
+
+# Evento
+class Evento:
+    def __init__(self, titulo, data, categoria):
+        self.titulo = titulo
+        self.data = data
+        self.categoria = categoria
+
+    def to_dict(self):
+        return {
+            "titulo": self.titulo,
+            "data": self.data,
+            "categoria": self.categoria.to_dict(),
+        }
+
+
+# Simulando armazenamento em memória
+eventos = []
+
+# Rota para criar um evento com categoria
+@app.route("/criar_evento", methods=["POST"])
+def criar_evento():
+    data = request.json
+    try:
+        categoria = CategoriaFlyweight(
+            nome=data["categoria"]["nome"],
+            cor=data["categoria"]["cor"],
+            icone=data["categoria"]["icone"]
+        )
+        evento = Evento(
+            titulo=data["titulo"],
+            data=data["data"],
+            categoria=categoria
+        )
+        eventos.append(evento)
+        return jsonify(evento.to_dict()), 201
+    except Exception as e:
+        return jsonify({"erro": str(e)}), 400
+
+
+# Rota para listar eventos
+@app.route("/listar_eventos", methods=["GET"])
+def listar_eventos():
+    return jsonify([evento.to_dict() for evento in eventos]), 200
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+## Como rodar
+
+Tenha o [pyhton 3](https://www.python.org/downloads/) e o gerenciador de pacote pip instalado em sua máquina.
+
+Abra o local do arquivo:
+```bash
+ cd '.\Projeto\GOFs Estruturais\flyweight_categorias\'
+```
+
+Instale as dependências com:
+```bash
+pip install -r requirements.txt
+```
+
+Inicie o Back-end:
+```bash
+python main.py
+```
+
+Abra o arquivo `frontend/index.html` no navegador da sua preferência e teste.
 
 ## Referências
 > <a>1.</a> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br>
@@ -76,6 +214,5 @@ O padrão Flyweight é especialmente útil em situações onde a criação e man
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.1`  | 05/01/2025 | Estrutura do artefato | [Gabriel Souza](https://github.com/GabrielMS00) | |
-
-
+| `1.0`  | 05/01/2025 | Estrutura do artefato | [Gabriel Souza](https://github.com/GabrielMS00) | [Yago](https://github.com/yagompassos) |
+| `1.1`  | 05/01/2025 | Metodologia | [Yago](https://github.com/yagompassos) | |
