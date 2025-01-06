@@ -7,7 +7,10 @@
   - [3. Desenho de Software (Padrões de Projeto)](./PadroesDeProjeto/3.PadroesDeProjeto.md)
     - [3.1. Padrões de Projeto GoFs Criacionais](./PadroesDeProjeto/3.1.Criacionais/GoFsCriacionais.md)
       - [3.1.1. Abstract Factory](./PadroesDeProjeto/3.1.Criacionais/AbstractFactory.md)
+      - [3.1.2. Builder](./PadroesDeProjeto/3.1.Criacionais/Builder.md)
+
     - [3.2. Padrões de Projeto GoFs Estruturais](./PadroesDeProjeto/3.2.GoFsEstruturais.md)
+        - [3.2.1. Abstract Factory](./PadroesDeProjeto/3.2.Estruturais/Bridge.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.GoFsComportamentais.md)
       - [3.3.1. Command](./PadroesDeProjeto/3.3.Comportamentais/Command.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
