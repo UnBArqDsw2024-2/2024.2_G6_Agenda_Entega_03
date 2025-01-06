@@ -1,28 +1,34 @@
 const apiUrl = "http://127.0.0.1:5000";
 
-document.getElementById("config-form").addEventListener("submit", async (e) => {
+document.getElementById("profile-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const tema = document.getElementById("tema").value;
-    const notificacoes = document.getElementById("notificacoes").checked;
-    const idioma = document.getElementById("idioma").value;
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const foto = document.getElementById("foto").files[0];
 
-    const response = await fetch(`${apiUrl}/configuracao`, {
+    // Cria um objeto FormData para enviar a foto
+    const formData = new FormData();
+    formData.append("nome", nome);
+    formData.append("email", email);
+    formData.append("senha", senha);
+    if (foto) {
+        formData.append("foto", foto);
+    }
+
+    const response = await fetch(`${apiUrl}/perfil`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tema, notificacoes, idioma }),
+        body: formData,
     });
 
     if (response.ok) {
-        // Redirecionar para a página de confirmação
         window.location.href = "confirmacao.html";
     } else {
         const data = await response.json();
-        alert(data.message);
+        alert(data.message || "Erro ao atualizar perfil.");
     }
 });
 
-document.getElementById("undo-btn").addEventListener("click", async () => {
-    const response = await fetch(`${apiUrl}/configuracao/undo`, { method: "POST" });
-    const data = await response.json();
-    alert(data.message);
+document.getElementById("undo-btn").addEventListener("click", () => {
+    window.location.href = "index.html"; // Redireciona para a página principal
 });

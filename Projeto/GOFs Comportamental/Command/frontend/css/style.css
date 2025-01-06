@@ -1,36 +1,40 @@
-/* Reset básico */
+/* Reset Básico */
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f7f7f7;
     color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Centralizar o conteúdo */
+/* Container principal */
 .container {
+    width: 100%;
     max-width: 400px;
-    margin: 50px auto;
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Títulos */
+/* Título */
 h1 {
     font-size: 24px;
-    margin-bottom: 20px;
     color: #4CAF50;
+    margin-bottom: 20px;
 }
 
-/* Estilo do formulário */
+/* Formulário */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-bottom: 15px;
 }
 
 .form-group {
@@ -44,88 +48,81 @@ label {
     display: block;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
     width: 100%;
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
-input[type="checkbox"] {
-    margin-left: 10px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
 /* Botões */
 button {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Botão primário - Salvar */
 .btn-primary {
     background-color: #4CAF50;
     color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
     background-color: #45a049;
+    transform: translateY(-2px); /* Animação de leve elevação */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+.btn-primary:active {
+    transform: translateY(1px); /* Efeito de clique */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão secundário - Cancelar */
 .btn-secondary {
     background-color: #ddd;
     color: #333;
-    margin-top: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
     background-color: #ccc;
+    transform: translateY(-2px); /* Animação de leve elevação */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:active {
+    transform: translateY(1px); /* Efeito de clique */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsividade */
 @media (max-width: 500px) {
     .container {
-        width: 90%;
+        padding: 20px;
     }
 
     h1 {
         font-size: 20px;
     }
-}
-
-
-/* Página de confirmação */
-.success-title {
-    font-size: 24px;
-    color: #4CAF50;
-    margin-bottom: 15px;
-}
-
-.container p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.container a {
-    text-decoration: none;
-}
-
-.container .btn-primary {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.container .btn-primary:hover {
-    background-color: #45a049;
 }

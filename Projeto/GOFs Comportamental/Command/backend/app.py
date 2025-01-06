@@ -1,43 +1,36 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from configuracao import ConfiguracaoUsuario
-from commands import PersonalizarConfiguracoesCommand
 
 app = Flask(__name__)
 CORS(app)
 
-configuracao_usuario = ConfiguracaoUsuario()
-historico = []
+# Simula dados de um perfil de usuário
+perfil_usuario = {
+    "nome": "Usuário Exemplo",
+    "email": "exemplo@dominio.com",
+    "senha": "senha123",
+    "foto": None  # Pode ser uma URL da foto de perfil
+}
 
-@app.route("/configuracao", methods=["GET"])
-def get_configuracao():
-    return jsonify({
-        "tema": configuracao_usuario.tema,
-        "notificacoes": configuracao_usuario.notificacoes,
-        "idioma": configuracao_usuario.idioma,
-    })
+@app.route("/perfil", methods=["GET"])
+def get_perfil():
+    return jsonify(perfil_usuario)
 
-@app.route("/configuracao", methods=["POST"])
-def update_configuracao():
-    data = request.json
-    command = PersonalizarConfiguracoesCommand(
-        configuracao_usuario,
-        tema=data.get("tema", "padrão"),
-        notificacoes=data.get("notificacoes", True),
-        idioma=data.get("idioma", "pt-BR"),
-    )
-    command.execute()
-    historico.append(command)
-
-    return jsonify({"message": "Configuração atualizada com sucesso!"})
-
-@app.route("/configuracao/undo", methods=["POST"])
-def undo_configuracao():
-    if historico:
-        command = historico.pop()
-        command.undo()
-        return jsonify({"message": "Alteração desfeita!"})
-    return jsonify({"message": "Nada para desfazer!"}), 400
+@app.route("/perfil", methods=["POST"])
+def update_perfil():
+    data = request.form
+    perfil_usuario["nome"] = data.get("nome", perfil_usuario["nome"])
+    perfil_usuario["email"] = data.get("email", perfil_usuario["email"])
+    perfil_usuario["senha"] = data.get("senha", perfil_usuario["senha"])
+    
+    # Lidar com upload de foto
+    foto = request.files.get("foto")
+    if foto:
+        # Salva a foto no servidor (apenas simulado aqui)
+        perfil_usuario["foto"] = f"uploads/{foto.filename}"
+        foto.save(f"uploads/{foto.filename}")
+    
+    return jsonify({"message": "Perfil atualizado com sucesso!"})
 
 if __name__ == "__main__":
     app.run(debug=True)
