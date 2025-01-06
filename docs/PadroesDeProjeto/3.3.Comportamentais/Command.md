@@ -160,6 +160,39 @@ if __name__ == "__main__":
 
 ---
 
+## Diagrama
+
+O diagrama abaixo apresenta a estrutura do padrão **Command** aplicado ao nosso projeto. Ele ilustra a relação entre os componentes principais:
+
+- **Command**: Define a interface para os comandos concretos.
+- **PersonalizarConfiguracoesCommand**: Implementa o comando concreto para personalizar as configurações do perfil.
+- **ConfiguracaoInvoker**: Armazena os comandos e gerencia a execução e desfazer.
+- **FlaskAPI**: Representa o cliente e o receptor que modifica o perfil do usuário.
+
+<p style="text-align: center"><b>Diagrama 1:</b> Diagrama Command</p>
+<div align="center">
+
+  <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/490d9a05-8a08-4269-a3d1-8564eee7653d" id="Ff1GosnjWfyg"></iframe></div>
+
+</div>
+
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/JohnnyLopess">Johnny Lopes</a>,, 2025</p></font>
+
+
+### Explicação do Diagrama
+
+1. **Command**:
+   - Interface base com os métodos `execute` e `undo`.
+
+2. **PersonalizarConfiguracoesCommand**:
+   - Implementação do comando concreto que altera as configurações do perfil. Mantém o estado anterior para possibilitar a reversão.
+
+3. **ConfiguracaoInvoker**:
+   - Gerencia o histórico de comandos para execução e desfazer.
+
+4. **FlaskAPI**:
+   - Serve como cliente que utiliza o `Invoker` e também como receptor que modifica diretamente o estado do perfil.
+
 ## Resultados
 
 ### 1. **Página de Edição de Perfil Preenchida**
