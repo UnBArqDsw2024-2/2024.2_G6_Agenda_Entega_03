@@ -37,7 +37,12 @@ No projeto atual, o Builder é utilizado para criar objetos da classe `Evento`, 
 
 ## Diagrama do Padrão Builder no Projeto
 
-![Diagrama do Padrão Builder](/2024.2_G6_Agenda_Entega_03/docs/images/3.1.Criacionais/Builder.png)
+<p style="text-align: center"><b>Figura 1:</b> Diagrama do Padrão Builder</p>
+<div align="center">
+  <img src="./images/3.1.Criacionais/Builder.png" width="650px" >
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/JohnnyLopess">Johnny da Ponte</a> , 2025</p></font>
+
 
 ### Contextualização do Diagrama
 
@@ -165,13 +170,18 @@ def criar_evento():
 
 Abaixo, estão as imagens da funcionalidade de Criação de Eventos executada:
 
-1. Criação do Evento:
+<p style="text-align: center"><b>Figura 2:</b> Criacao do Evento</p>
+<div align="center">
+  <img src="./images/3.1.Criacionais/CriacaoEvento.png" width="1050px" >
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/JohnnyLopess">Johnny da Ponte</a> , 2025</p></font>
 
-![Criacao do Evento](/2024.2_G6_Agenda_Entega_03/docs/images/3.1.Criacionais/CriacaoEvento.png)
 
-2. Tela de Sucesso:
-
-![Tela de Sucesso](/2024.2_G6_Agenda_Entega_03/docs/images/3.1.Criacionais/TelaSucessoCriacao.png)
+<p style="text-align: center"><b>Figura 3:</b> Tela de Sucesso</p>
+<div align="center">
+  <img src="./images/3.1.Criacionais/TelaSucessoCriacao.png" width="1050px" >
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/JohnnyLopess">Johnny da Ponte</a> , 2025</p></font>
 
 ## Vantagens do Padrão Builder no Projeto
 
@@ -185,5 +195,5 @@ Abaixo, estão as imagens da funcionalidade de Criação de Eventos executada:
 
 | Versão | Data       | Descrição                  | Autor(es)                     | Data de Revisão | Revisor(es) |
 |--------|------------|----------------------------|--------------------------------|-----------------|-------------|
-| `1.0`  | 06/01/2025 | Versão inicial do projeto. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -               | -           |
-| `1.1`  | 06/01/2025 | Adicionando imagens do projeto rodando. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -               | -           |
+| `1.0`  | 06/01/2025 | Versão inicial do projeto. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -       06/01/2025           | -    [Bianca Patrocínio](https://github.com/BiancaPatrocinio7)        |
+| `1.1`  | 06/01/2025 | Adicionando imagens do projeto rodando. | [João Barreto](https://github.com/JoaoBarreto03) e [Johnny da Ponte](https://github.com/JohnnyLopess) | -        06/01/2025       | -   [Bianca Patrocínio](https://github.com/BiancaPatrocinio7)    |
