@@ -6,72 +6,73 @@ O **Prototype** é um padrão de projeto criacional que permite criar cópias ex
 
 ## Elementos Principais do Prototype e como implemntar
 
-## **Elementos Principais**
-1. **Interface do Protótipo:**  
+### Elementos Principais
+
+1. Interface do Protótipo:  
    Define um método `clone()` para ser implementado por todas as classes que suportam clonagem.
 
-2. **Classe Protótipo Concreta:**  
+2. Classe Protótipo Concreta:  
    Implementa a interface do protótipo e fornece a lógica para clonar seus próprios objetos.  
    Inclui:
    - Um construtor alternativo para criar uma cópia de outro objeto da mesma classe.
    - Implementação do método `clone()`.
 
-3. **Cliente (Client):**  
+3. Cliente (Client):  
    O código que solicita a clonagem dos protótipos sem saber a classe concreta dos objetos.
 
-4. **Registro de Protótipos (opcional):**  
+4. Registro de Protótipos (opcional):  
    Um catálogo centralizado para armazenar protótipos pré-construídos que podem ser clonados conforme necessário.  
 
-## **Como Implementar**
-### 1. Criar a Interface do Protótipo
+### Como Implementar
+
+1. Criar a Interface do Protótipo
 Declare o método `clone()` na interface ou adicione-o diretamente às classes existentes.  
 
 ```java
 public interface Prototype {
     Prototype clone();
-}
+}```
 
 ## Vantagens e Desvantagens 
 
-## **Prós (Vantagens):**
-- **Desacoplamento de Classes Concretas:**  
+## Prós (Vantagens)
+
+- Desacoplamento de Classes Concretas:  
   Permite criar cópias de objetos sem depender de suas classes concretas, garantindo maior flexibilidade e menor dependência.
 
-- **Redução de Código Repetitivo:**  
+- Redução de Código Repetitivo:  
   Substitui código de inicialização redundante por clones de protótipos já configurados, otimizando a criação de objetos.
 
-- **Facilidade na Criação de Objetos Complexos:**  
+- Facilidade na Criação de Objetos Complexos:  
   Facilita a criação de objetos com muitos atributos ou configurações, sem necessidade de instanciar e configurar manualmente.
 
-- **Alternativa à Herança:**  
+- Alternativa à Herança:  
   Oferece uma solução mais enxuta e flexível para criar variações de objetos complexos sem hierarquias extensas de subclasses.
 
-- **Reutilização de Protótipos Pré-construídos:**  
+- Reutilização de Protótipos Pré-construídos:  
   Objetos pré-configurados podem ser clonados rapidamente, economizando tempo e recursos.
 
----
+## Contras (Desvantagens)
 
-## **Contras (Desvantagens):**
-- **Complexidade na Clonagem de Objetos Complexos:**  
+- Complexidade na Clonagem de Objetos Complexos:  
   Clonar objetos com referências circulares ou dependências complexas pode ser desafiador e exigir lógica adicional.
 
-- **Dependência de Implementação Correta:**  
+- Dependência de Implementação Correta:  
   A eficácia do padrão depende de uma implementação adequada do método `clone()`. Erros podem gerar cópias inconsistentes.
 
-- **Manutenção Difícil em Estruturas Complexas:**  
+- Manutenção Difícil em Estruturas Complexas:  
   Garantir que todas as dependências e referências sejam clonadas corretamente em sistemas complexos pode aumentar a dificuldade de manutenção.
 
-- **Risco de Sobrecarga com Clonagem Profunda:**  
+- Risco de Sobrecarga com Clonagem Profunda:  
   A clonagem profunda (deep copy), necessária em alguns casos, pode ser lenta e consumir mais memória.
-
----
 
 O **Prototype** é útil em cenários onde é necessário criar objetos complexos de forma eficiente, mas deve ser usado com cautela em sistemas com alta complexidade e dependências.
 
 
 ## Metodologia
 
-No sistema de Agenda, de acordo com o [diagrama de classes](https://unbarqdsw2024-2.github.io/2024.2_G6_Agenda_Entrega_02/#/./foco1/d_classes) existem duas maneiras distintas para um usuário realizar seu login: a primeira utiliza um e-mail e uma senha previamente cadastrados; a segunda, uma sincronização direta com uma conta do Google. Dado que o sistema foi projetado com foco em escalabilidade, especialmente no que diz respeito às funcionalidades de login, a adoção do padrão de design criacional <b>Abstract Factory</b> foi considerada viável para abstrair o processo de login. Essa abordagem permite que o código cliente permaneça desacoplado das implementações concretas do objeto Usuario.
+No sistema de Agenda, de acordo com o [diagrama de classes]() 
+existem duas maneiras distintas para um usuário realizar seu login: a primeira utiliza um e-mail e uma senha previamente cadastrados; a segunda, uma sincronização direta com uma conta do Google. Dado que o sistema foi projetado com foco em escalabilidade, especialmente no que diz respeito às funcionalidades de login, a adoção do padrão de design criacional <b>Abstract Factory</b> foi considerada viável para abstrair o processo de login. Essa abordagem permite que o código cliente permaneça desacoplado das implementações concretas do objeto Usuario.
 
 A escolha do padrão Abstract Factory oferece os seguintes aspectos positivos para o desenvolvimento da aplicação:
 
@@ -82,12 +83,8 @@ Considerando os requisitos da página de login, concluímos de forma unânime, a
 
 ## Modelagem
 
-
 * Implementação:
 Para a criação da modelagem foi utilizado o **Java Design Pattern** e a ferramenta **Lucid** para o diagrama de classes, o que facilitou o processo de abstração e visualização do sistema. O diagrama de classes foi desenvolvido para garantir que as diferentes funcionalidades de login, como autenticação via e-mail ou Google, fossem implementadas de forma desacoplada, utilizando o padrão **Abstract Factory**.
-
-   
-
 
 <p style="text-align: center"><b>Figura 1:</b> Modelo de domínio utilizado no projeto.</p>
 <div align="center">
@@ -95,9 +92,8 @@ Para a criação da modelagem foi utilizado o **Java Design Pattern** e a ferram
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
-
 ## Código
-A pasta de código fonte está localizada em `Projeto/GOFs Criacionais/AbstractFactory`.
+A pasta de código fonte está localizada em `Projeto/GOFs Criacionais/Prototype`.
 
 ### Back-end
 
