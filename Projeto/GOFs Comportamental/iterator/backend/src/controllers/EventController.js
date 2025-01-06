@@ -1,9 +1,12 @@
-const EventCollection = require('../collections/EventCollection');
+const EventCollection = require('../collections/EventCollections');
 const Event = require('../models/Event');
 
 
 const eventCollection = new EventCollection();
 eventCollection.addEvent(new Event(1, 'Reunião', '2025-01-06', 'trabalho'));
+eventCollection.addEvent(new Event(11, 'Reunião', '2025-01-06', 'trabalho'));
+eventCollection.addEvent(new Event(12, 'Reunião', '2025-01-06', 'trabalho'));
+eventCollection.addEvent(new Event(13, 'Reunião', '2025-01-06', 'trabalho'));
 eventCollection.addEvent(new Event(2, 'Treino', '2025-01-07', 'saúde'));
 eventCollection.addEvent(new Event(3, 'Cinema', '2025-01-10', 'lazer'));
 
@@ -22,6 +25,12 @@ function filterEventsByDateRange(startDate, endDate) {
 }
 
 const EventController = {
+
+  getEvents(req, res) {
+    const events = eventCollection.events;
+    res.json(events);
+  },
+
   getEventsByDay(req, res) {
     const { date } = req.query;
     const events = filterEventsByDateRange(date, date);
@@ -43,6 +52,7 @@ const EventController = {
   },
 };
 
+module.exports.getEvents = EventController.getEvents;
 module.exports.getEventsByDay = EventController.getEventsByDay;
 module.exports.getEventsByWeek = EventController.getEventsByWeek;
 module.exports.getEventsByMonth = EventController.getEventsByMonth;

@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const EventController = require('../controllers/EventController');
 
-router.get('/day', EventController.getEventsByDay);
-router.get('/week', EventController.getEventsByWeek);
-router.get('/month', EventController.getEventsByMonth);
+const {
+    getEvents,
+    getEventsByDay,
+    getEventsByWeek,
+    getEventsByMonth,
+} = require('../controllers/EventController'); // Certifique-se de que este caminho está correto
+
+router.get('/', getEvents);
+router.get('/day', getEventsByDay);
+router.get('/week', getEventsByWeek);
+router.get('/month', getEventsByMonth);
 
 module.exports = router;
