@@ -62,7 +62,7 @@ Essa implementação promove um sistema seguro e eficiente, garantindo que o com
 
 <p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Proxy</p>
 <div align="center">
-  <img src="https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03/blob/main/docs/images/3.2.Estruturais/proxy.png?raw=true" width="1050px" >
+  <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/19dedd0c-22f4-4412-b249-bb33ba188ed0" id="LtZG1916LoEq"></iframe></div>
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>,, 2025</p></font>
 
