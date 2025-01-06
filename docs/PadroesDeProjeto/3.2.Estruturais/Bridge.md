@@ -146,6 +146,8 @@ class DayMode(DisplayMode):
 
 - **Objetivo:** Filtrar compromissos que acontecem no dia atual.
 
+![Modo Diario](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/ModoDiario.png)
+
 #### Modo Semanal
 
 ```python
@@ -160,6 +162,8 @@ class WeekMode(DisplayMode):
 
 - **Objetivo:** Filtrar compromissos que acontecem na semana atual.
 
+![Modo Semanal](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/ModoSemanal.png)
+
 #### Modo Mensal
 
 ```python
@@ -173,6 +177,8 @@ class MonthMode(DisplayMode):
 ```
 
 - **Objetivo:** Filtrar compromissos que acontecem no mês atual.
+
+![Modo Mensal](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/ModoMensal.png)
 
 ---
 
