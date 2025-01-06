@@ -1,5 +1,6 @@
-import EventCollection from '../collections/EventCollection';
-import Event from '../models/Event';
+const EventCollection = require('../collections/EventCollection');
+const Event = require('../models/Event');
+
 
 const eventCollection = new EventCollection();
 eventCollection.addEvent(new Event(1, 'Reunião', '2025-01-06', 'trabalho'));
@@ -42,4 +43,6 @@ const EventController = {
   },
 };
 
-export default EventController;
+module.exports.getEventsByDay = EventController.getEventsByDay;
+module.exports.getEventsByWeek = EventController.getEventsByWeek;
+module.exports.getEventsByMonth = EventController.getEventsByMonth;

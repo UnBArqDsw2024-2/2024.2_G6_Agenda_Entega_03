@@ -8,4 +8,5 @@ app.use(bodyParser.json());
 
 app.use('/api/events', eventRoutes);
 
-export default app;
+
+module.exports = app;

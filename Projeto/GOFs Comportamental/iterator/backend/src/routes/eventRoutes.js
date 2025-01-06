@@ -1,14 +1,9 @@
-import { Router } from 'express';
-import {
-  getEventsByDay,
-  getEventsByMonth,
-  getEventsByWeek,
-} from '../controllers/EventController.js';
+const express = require('express');
+const router = express.Router();
+const EventController = require('../controllers/EventController');
 
-const router = Router();
+router.get('/day', EventController.getEventsByDay);
+router.get('/week', EventController.getEventsByWeek);
+router.get('/month', EventController.getEventsByMonth);
 
-router.get('/day', getEventsByDay);
-router.get('/week', getEventsByWeek);
-router.get('/month', getEventsByMonth);
-
-export default router;
+module.exports = router;
