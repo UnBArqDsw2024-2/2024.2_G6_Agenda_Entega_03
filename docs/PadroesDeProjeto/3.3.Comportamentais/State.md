@@ -192,7 +192,7 @@ public class LembreteController {
         try {
             Lembrete lembrete = lembreteService.obterLembrete(id);
             if (lembrete != null) {
-                return new ResponseEntity<>("Lembrete encontrado: " + lembrete, HttpStatus.OK);
+                return new ResponseEntity<>("Lembrete encontrado: " + lembrete.getMensagem()+", "+lembrete.getDataHora()+", "+lembrete.getEstado(), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>("Lembrete com ID " + id + " não encontrado.", HttpStatus.NOT_FOUND);
             }
@@ -215,6 +215,7 @@ public class LembreteController {
         }
     }
 }
+
 ```
 
 ---
@@ -225,11 +226,24 @@ Neste exemplo, o cliente utiliza o **Contexto** **Lembrete**, que delega o proce
 
 ### Imagens
 
-<p style="text-align: center"><b>Figura 2:</b> Testando o processamento de lembretes com diferentes estados</p>
+<p style="text-align: center"><b>Figura 2:</b> Testando criação de lembrete</p>
 <div align="center">
-  <img src="./images/state_example.png" width="1050px">
+  <img src="./images/3.3.Comportamentais/imageState.png" width="1050px">
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
+
+<p style="text-align: center"><b>Figura 3:</b> Testando buscando lembrete</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/imageState2.png" width="1050px">
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
+
+<p style="text-align: center"><b>Figura 4:</b> Testando atualizar lembrete/p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/imageState3.png" width="1050px">
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
+
 
 ## Referências
 <a>1.</a> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br> <a>2.</a> FREEMAN, Eric; FREEMAN, Elisabeth Robson. Head First Design Patterns: A Brain-Friendly Guide. 2. ed. Sebastopol: O'Reilly Media, 2020. <br> <a>3.</a> Refactoring Guru. State Pattern. Disponível em: https://refactoring.guru/design-patterns/state. Acesso em: 06 jan. 2025. <br> <a>4.</a> Wikipedia. State Pattern. Disponível em: https://en.wikipedia.org/wiki/State_pattern. Acesso em: 06 jan. 2025. <br> <a>5.</a> SourceMaking. State. Disponível em: https://sourcemaking.com/design_patterns/state. Acesso em: 06 jan. 2025. <br> <a>6.</a> ROYTUTS. State Design Pattern in Java. Disponível em: https://roytuts.com/state-design-pattern-in-java/. Acesso em: 06 jan. 2025. <br>
