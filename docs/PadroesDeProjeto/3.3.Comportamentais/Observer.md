@@ -170,6 +170,22 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
     if __name__ == "__main__":
         app.run(debug=True)
 
+## Resultados
+
+<p style="text-align: center"><b>Figura 1:</b> Pagina de Criacao/Visualizacao de Eventos</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/CrudEventos.png" width="1050px">
+</div>
+
+<p style="text-align: center"><b>Figura 2:</b> Pagina de Visualizacao Eventos</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/EditDeleteEventos.png" width="1050px">
+</div>
+
+<p style="text-align: center"><b>Figura 3:</b> Pagina de Visualizacao Eventos</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/NotificacaoEvento.png" width="1050px">
+</div>
 
 ## Referências
 > <a>1.</a> GOF Comportamental - Observer. **Observer Design Pattern**. Disponível em: [Observer Design Pattern](https://sourcemaking.com/design_patterns/observer)  Acesso em: 04/01/2025. <br>
@@ -179,4 +195,4 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Criacão do artefato | [Paulo Borba](https://github.com/paulohborba) e [João Barreto](https://github.com/JoaoBarreto03) |  |
+| `1.0`  | 05/01/2025 | Criacão do artefato | [Paulo Borba](https://github.com/paulohborba) e [João Barreto](https://github.com/JoaoBarreto03) |  [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) 
