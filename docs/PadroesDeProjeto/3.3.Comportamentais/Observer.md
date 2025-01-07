@@ -172,17 +172,20 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
 
 ## Resultados
 
-1. Página de Criação e Visualização de Eventos:
+<p style="text-align: center"><b>Figura 1:</b> Pagina de Criacao/Visualizacao de Eventos</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/CrudEventos.png" width="1050px">
+</div>
 
-![Pagina de Criacao/Visualizacao de Eventos](/2024.2_G6_Agenda_Entega_03/docs/images/3.3.Comportamentais/CrudEventos.png)
+<p style="text-align: center"><b>Figura 2:</b> Pagina de Visualizacao Eventos</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/EditDeleteEventos.png" width="1050px">
+</div>
 
-2. Visualização do Evento Criado:
-
-![Pagina de Visualizacao Eventos](/2024.2_G6_Agenda_Entega_03/docs/images/3.3.Comportamentais/EditDeleteEventos.png)
-
-3. Notificação de Criação do Evento:
-
-![Notificacao](/2024.2_G6_Agenda_Entega_03/docs/images/3.3.Comportamentais/NotificacaoEvento.png)
+<p style="text-align: center"><b>Figura 3:</b> Pagina de Visualizacao Eventos</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/NotificacaoEvento.png" width="1050px">
+</div>
 
 ## Referências
 > <a>1.</a> GOF Comportamental - Observer. **Observer Design Pattern**. Disponível em: [Observer Design Pattern](https://sourcemaking.com/design_patterns/observer)  Acesso em: 04/01/2025. <br>

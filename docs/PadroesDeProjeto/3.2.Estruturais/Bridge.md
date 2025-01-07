@@ -64,7 +64,10 @@ No contexto deste projeto, o padrão Bridge resolve o problema de criar modos de
 
 Abaixo está o diagrama que ilustra a aplicação do padrão **Bridge** no projeto. Ele ajuda a visualizar a separação entre abstração e implementação, evidenciando a flexibilidade e modularidade do sistema.
 
-![Diagrama Bridge](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/bridge.png)
+<p style="text-align: center"><b>Diagrama 1:</b> Diagrama Bridge</p>
+<div align="center">
+  <img src="./images/3.2.Estruturais/bridge.png" width="850px">
+</div>
 
 ### Contextualização do Diagrama:
 
@@ -146,7 +149,11 @@ class DayMode(DisplayMode):
 
 - **Objetivo:** Filtrar compromissos que acontecem no dia atual.
 
-![Modo Diario](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/ModoDiario.png)
+<p style="text-align: center"><b>Diagrama 2:</b> Modo Diario</p>
+<div align="center">
+  <img src="./images/3.2.Estruturais/ModoDiario.png" width="850px">
+</div>
+
 
 #### Modo Semanal
 
@@ -162,7 +169,10 @@ class WeekMode(DisplayMode):
 
 - **Objetivo:** Filtrar compromissos que acontecem na semana atual.
 
-![Modo Semanal](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/ModoSemanal.png)
+<p style="text-align: center"><b>Diagrama 3:</b> Modo Semanal</p>
+<div align="center">
+  <img src="./images/3.2.Estruturais/ModoSemanal.png" width="850px">
+</div>
 
 #### Modo Mensal
 
@@ -178,7 +188,11 @@ class MonthMode(DisplayMode):
 
 - **Objetivo:** Filtrar compromissos que acontecem no mês atual.
 
-![Modo Mensal](/2024.2_G6_Agenda_Entega_03/docs/images/3.2.Estruturais/ModoMensal.png)
+
+<p style="text-align: center"><b>Diagrama 4:</b> Modo Mensal</p>
+<div align="center">
+  <img src="./images/3.2.Estruturais/ModoMensal.png" width="850px">
+</div>
 
 ---
 

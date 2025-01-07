@@ -288,25 +288,25 @@ Neste exemplo, o cliente interage com a interface comum do `AuthService`, sem se
 
 ### Imagens
 
-<p style="text-align: center"><b>Figura 2:</b> Testando Via Postman - Cadastro com email e senha</p>
+<p style="text-align: center"><b>Figura 1:</b> Testando Via Postman - Cadastro com email e senha</p>
 <div align="center">
   <img src="./images/3.2.Estruturais/imageAdaptor.png" width="1050px" >
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 3:</b> Testando Via Postman - Cadastro com email e senha já cadastrado</p>
+<p style="text-align: center"><b>Figura 2:</b> Testando Via Postman - Cadastro com email e senha já cadastrado</p>
 <div align="center">
   <img src="./images/3.2.Estruturais/imageAdaptor2.png" width="1050px" >
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 4:</b> Testando Via Postman - Cadastro com email e senha via Google</p>
+<p style="text-align: center"><b>Figura 3:</b> Testando Via Postman - Cadastro com email e senha via Google</p>
 <div align="center">
   <img src="./images/3.2.Estruturais/imageAdaptor3.png" width="1050px" >
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 5:</b> Testando Via Postman - Login com email e senha válidos</p>
+<p style="text-align: center"><b>Figura 4:</b> Testando Via Postman - Login com email e senha válidos</p>
 <div align="center">
   <img src="./images/3.2.Estruturais/imageAdaptor4.png" width="1050px" >
 </div>

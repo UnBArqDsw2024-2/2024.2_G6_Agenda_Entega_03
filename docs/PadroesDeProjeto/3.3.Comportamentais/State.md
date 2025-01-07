@@ -58,11 +58,34 @@ A implementação do padrão **State** no sistema de lembretes envolve a criaç�
 
 O diagrama apresentado ilustra a aplicação do padrão de design **State** para gerenciar os estados de um lembrete. O **Context** é o objeto **Lembrete**, que possui um estado atual (como **Ativo** ou **Expirado**) e delega o comportamento para os **ConcreteState** correspondentes.
 
-<p style="text-align: center"><b>Figura 1:</b> Diagrama usando o padrão de design State</p>
-<div align="center">
-  <img src="./images/state_diagram.png" width="1050px">
-</div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href=""></a>, 2025</p></font>
+<p style="text-align: center"><b>Diagrama 1:</b> Diagrama usando o padrão de design State</p>
+<center>
+<div style="width: 800px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/dc1a00a3-2086-48c1-b27d-81f159fbab48" id="~ugHZFySBQ0A"></iframe></div>
+
+</center>
+
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JohnnyLopess">Johnny Lopes</a> e <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>,, 2025</p></font>
+
+
+
+#### Legenda
+
+1. **LembreteService**: 
+   - Classe responsável pela lógica de negócios relacionada a lembretes. Utiliza um repositório (`LembreteRepository`) para operações de persistência e oferece métodos para criar, obter e atualizar lembretes.
+
+2. **Lembrete**:
+   - Representa o objeto de lembrete, contendo atributos como estado, mensagem e data/hora.
+   - A classe permite a troca do estado do lembrete através do método `setEstado`, além de executar ações associadas ao estado atual com o método `executarAcoes`.
+
+3. **LembreteStateInterface**:
+   - Interface que define o contrato para os diferentes estados de um lembrete. Cada estado deve implementar o método `executarAcoes`.
+
+4. **Estados (AtivoState, ExpiradoState, AdiadoState)**:
+   - Implementações concretas da interface `LembreteStateInterface`, representando diferentes estados possíveis de um lembrete:
+     - **AtivoState**: Indica que o lembrete está ativo.
+     - **ExpiradoState**: Indica que o lembrete já expirou.
+     - **AdiadoState**: Indica que o lembrete foi adiado para uma nova data/hora.
+
 
 ---
 
@@ -226,19 +249,32 @@ Neste exemplo, o cliente utiliza o **Contexto** **Lembrete**, que delega o proce
 
 ### Imagens
 
-<p style="text-align: center"><b>Figura 2:</b> Testando criação de lembrete</p>
+
+<p style="text-align: center"><b>Figura 1:</b> Tela inicial</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/State/figura1.jpg" width="1050px">
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JohnnyLopess">Johnny Lopes</a>, 2025</p></font>
+
+<p style="text-align: center"><b>Figura 2:</b> Tela de confirmação</p>
+<div align="center">
+  <img src="./images/3.3.Comportamentais/State/figura2.jpg" width="1050px">
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JohnnyLopess">Johnny Lopes</a>, 2025</p></font>
+
+<p style="text-align: center"><b>Figura 3:</b> Testando criação de lembrete</p>
 <div align="center">
   <img src="./images/3.3.Comportamentais/imageState.png" width="1050px">
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 3:</b> Testando buscando lembrete</p>
+<p style="text-align: center"><b>Figura 4:</b> Testando buscando lembrete</p>
 <div align="center">
   <img src="./images/3.3.Comportamentais/imageState2.png" width="1050px">
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 4:</b> Testando atualizar lembrete/p>
+<p style="text-align: center"><b>Figura 5:</b> Testando atualizar lembrete</p>
 <div align="center">
   <img src="./images/3.3.Comportamentais/imageState3.png" width="1050px">
 </div>
@@ -254,5 +290,5 @@ Neste exemplo, o cliente utiliza o **Contexto** **Lembrete**, que delega o proce
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Back-end e inicio da documentação do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |  |
-
+| `1.0`  | 05/01/2025 | Back-end e inicio da documentação do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | [Johnny Lopes](https://github.com/JohnnyLopess) |
+| `1.1`  | 06/01/2025 | Adicionando diagrama e as imagens das telas | [Johnny Lopes](https://github.com/JohnnyLopess) | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |
