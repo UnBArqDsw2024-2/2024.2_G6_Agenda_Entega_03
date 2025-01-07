@@ -14,12 +14,17 @@ A aplicação do Singleton garantiu que a agenda tivesse apenas uma instância c
 #### Prototype  
 O padrão Prototype foi empregado para criar cópias rápidas de eventos ou tarefas previamente configurados. Por exemplo, a duplicação de compromissos recorrentes ou eventos similares foi simplificada por meio do recurso de clonagem.  
 
+##### Factory Method
+
+O Factory Method foi implementado para facilitar a criação de diferentes tipos de objetos relacionados à agenda, como eventos de diferentes categorias (reuniões, conferências, etc.). Ele permite que a criação desses objetos seja delegada a subclasses, garantindo flexibilidade na instância de objetos sem expor os detalhes de sua criação. 
+
 #### Aplicação no Projeto  
 No contexto da agenda, cada padrão criacional contribuiu para aprimorar diferentes funcionalidades:  
 - **Abstract Factory** assegurou a compatibilidade entre os tipos de dados.  
 - **Builder** facilitou a configuração de entradas detalhadas.  
 - **Singleton** centralizou a gestão da agenda.  
 - **Prototype** otimizou a duplicação de eventos e tarefas.  
+- **Factory Method** simplificou a criação de diferentes tipos de eventos.
 
 O resultado foi uma solução modular e escalável, com foco na clareza e facilidade de manutenção. A implementação prática está documentada na Wiki do projeto, com modelagem, código funcional e histórico de commits no repositório demonstrando a colaboração da equipe.
 
@@ -29,4 +34,4 @@ O resultado foi uma solução modular e escalável, com foco na clareza e facili
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 06/01/2025 | Resumo do que foi feito dos GoF's | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |  |
+| `1.0`  | 06/01/2025 | Resumo do que foi feito dos GoF's | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |[Carlos Alves](https://github.com/CADU110)  |
