@@ -238,7 +238,7 @@ A função `filterEventsByDateRange` filtra eventos dentro de um intervalo de da
 
 ## Referências
 > <a>1.<a/> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br>
-> <a>2.<a/> REFACTORING GURU. *Iterator: Design Patterns.* Disponível em: [https://refactoring.guru/pt-br/design-patterns/prototype](https://refactoring.guru/design-patterns/iterator). Acesso em: 06 jan. 2025.. <br>
+> <a>2.<a/> REFACTORING GURU. *Iterator: Design Patterns.* Disponível em: [https://refactoring.guru/pt-br/design-patterns/iterator](https://refactoring.guru/design-patterns/iterator). Acesso em: 06 jan. 2025.. <br>
 
 ## Histórico de Versões
 

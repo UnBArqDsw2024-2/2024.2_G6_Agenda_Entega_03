@@ -85,7 +85,7 @@ Sendo assim existe a necessidade do agendamento de eventos recorrentes envolve a
 Para a criação da modelagem foi utilizado a ferramenta **Lucid** para o diagrama de classes, o que facilitou o processo de abstração e visualização do sistema. 
 
 <p style="text-align: center"><b>Figura 1:</b> Modelo de domínio utilizado no projeto.</p>
-<div align="center"><div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe frameborder="0" style="width:100%;height:353px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=prototype.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oohHlQTe0by6IUe3_Q-6BgyOTLuCm1jd%26export%3Ddownload"></iframe></div>
+<div align="center"><div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe frameborder="0" style="width:100%;height:213px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=facade.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D13Q30SPWBAKW1XGlPIKqNa6_FTGmRpNEO%26export%3Ddownload"></iframe></div>
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b><a href="https://github.com/CADU110">Carlos Alves</a>, <a href="https://github.com/melohugo"> Hugo Queiroz</a> e <a href="https://github.com/vitorfleonardo"> Vitor Féijo</a>, 2025</p></font>
 
