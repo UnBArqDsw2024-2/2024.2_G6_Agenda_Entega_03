@@ -426,4 +426,4 @@ Esses são os principais componentes do padrão Abstract Factory que foram imple
 | :----: | ---- | --------- | ----- | ------- |
 | `1.0`  | 04/01/2025 | Estrutura do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | [Gabriel Souza](https://github.com/GabrielMS00) |
 | `1.1`  | 05/01/2025 | Complementação da metodologia e ajuste das referências | [Gabriel Souza](https://github.com/GabrielMS00) | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | 
-| `1.2`  | 05/01/2025 | Adição de código e modelagem do AbstractFactory |  [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) || 
+| `1.2`  | 05/01/2025 | Adição de código e modelagem do AbstractFactory |  [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |[Carlos Alves](https://github.com/CADU110)| 

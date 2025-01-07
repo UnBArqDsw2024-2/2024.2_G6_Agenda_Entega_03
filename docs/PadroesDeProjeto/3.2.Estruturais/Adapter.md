@@ -328,5 +328,5 @@ Neste exemplo, o cliente interage com a interface comum do `AuthService`, sem se
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Back-end e documentação do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) |  |
+| `1.0`  | 05/01/2025 | Back-end e documentação do artefato | [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) | [Carlos Alves](https://github.com/CADU110) |
 

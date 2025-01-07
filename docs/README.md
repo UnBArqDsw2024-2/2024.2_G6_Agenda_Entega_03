@@ -27,18 +27,21 @@
 </center>
 
 ## Sobre 
-Contextualize, usando referências, links, e outros materiais como fontes.
+
+Uma agenda digital eficiente pode transformar a organização do dia a dia, promovendo produtividade e melhorando a gestão de compromissos. Ferramentas como o Google Calendar, que oferece sincronização em tempo real e lembretes personalizados, ajudam os usuários a manterem-se organizados em diferentes dispositivos. Outros exemplos incluem o Trello, que utiliza uma interface visual intuitiva com funcionalidade de arrastar e soltar para organizar tarefas e projetos, e o Microsoft Teams, que permite integrar agendas e eventos para facilitar a colaboração em equipes. Essas referências mostram como a integração e a personalização são essenciais para uma agenda que atenda bem às expectativas dos usuários.
 
 ## Screenshots da Terceira Entrega
-Adicione 2 ou mais screenshots em termos de artefatos realizados na entrega.
+
+<div align="center">
+  <img src="./images/screenshot01.jpeg" width="1050px" >
+</div>
+
+<div align="center">
+  <img src="./images/screenshot02.jpeg" width="1050px" >
+</div>
 
 ## Há algo a ser executado?
 
 ( ) SIM
 
-( ) NÃO
-
-Se SIM, insira um manual (ou um script) para auxiliar ainda mais os interessados na execução.
-
-## Informações Complementares 
-Quaisquer outras informações adicionais podem ser descritas nessa seção.
+(x) NÃO
