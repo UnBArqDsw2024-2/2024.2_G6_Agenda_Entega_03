@@ -1,4 +1,4 @@
-# Iterador
+# Iterator
 
 ## Introdução
 
@@ -43,9 +43,15 @@ O uso do padrão **Iterator** é ideal quando há necessidade de iterar por dife
 
 ## Metodologia
 
-No sistema de Agenda, de acordo com o RE-004: Agendamento de eventos recorrentes, como reuniões semanais, sem a necessidade de recriá-los manualmente.
+No sistema de Agenda, de acordo com os requisitos 
 
-Sendo assim existe a necessidade do agendamento de eventos recorrentes envolve a criação de múltiplos eventos similares (mesmo título, participantes, descrição), mas com diferenças sutis, como datas e horários. O padrão Prototype permite criar um protótipo de um evento e, em seguida, clonar esse protótipo para gerar rapidamente os eventos recorrentes, com a flexibilidade de modificar apenas os atributos necessários (como a data).
+RE-009,RE-022 : Visualização diária, semanal ou mensal, 
+
+RE-003,RE-108, RE-121: Filtragem de eventos, 
+
+RE-081: Percorrer eventos de um cliente, surgiu a necessidade de implementar uma funcionalidade eficiente para navegação e manipulação de eventos.
+
+Esses requisitos demandam uma maneira flexível de iterar pelos eventos, seja em visualizações agrupadas por dia, semana ou mês, ou para aplicar filtros específicos (como por cliente ou por categoria). O padrão **Iterator** foi escolhido porque permite percorrer eventos de maneira desacoplada, encapsulando a lógica de navegação em uma estrutura separada. Assim, o cliente pode acessar os eventos sem precisar conhecer os detalhes da organização interna (lista, árvore, etc.), facilitando a implementação de visualizações personalizadas e filtros dinâmicos. Além disso, o padrão suporta múltiplas iterações simultâneas, o que é útil para visualizar diferentes contextos (ex.: lista de eventos filtrada e visualização por calendário) ao mesmo tempo.
 
 ## Modelagem
 
@@ -54,13 +60,13 @@ Sendo assim existe a necessidade do agendamento de eventos recorrentes envolve a
 Para a criação da modelagem foi utilizado a ferramenta **Lucid** para o diagrama de classes, o que facilitou o processo de abstração e visualização do sistema. 
 
 <p style="text-align: center"><b>Figura 1:</b> Modelo de domínio utilizado no projeto.</p>
-<div align="center"><div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe frameborder="0" style="width:100%;height:353px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=prototype.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oohHlQTe0by6IUe3_Q-6BgyOTLuCm1jd%26export%3Ddownload"></iframe></div>
+<div align="center"><div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe frameborder="0" style="width:100%;height:433px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=iterator.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1umi2vF1UgAOzAmAvQGYFfYfsr-s_AY8j%26export%3Ddownload"></iframe></div>
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b><a href="https://github.com/CADU110">Carlos Alves</a>, <a href="https://github.com/melohugo"> Hugo Queiroz</a> e <a href="https://github.com/vitorfleonardo"> Vitor Féijo</a>, 2025</p></font>
 
 ## Código
 
-A pasta de código fonte está localizada em `Projeto/GOFs Criacionais/Prototype`.
+A pasta de código fonte está localizada em `Projeto/GOFs Comportamental/iterator`.
 
 ### Back-end
 
@@ -70,15 +76,137 @@ A estrutura básica do projeto é a seguinte:
 
 ```
 backend/
-├── controller/
-│   └── TaskController.js
-├── models/
-│   └── Task.js
-├── routes/
-│    └── TaskRoute.js
-└── index.js
+├──src/
+|    ├── collections/
+|    |     └── EventCollections.js
+|    ├── controllers/
+|    |     └── EventController.js
+|    ├── iterators/
+|    |     └── EventIterator.js
+|    |     └── Iterator.js
+|    ├── models
+|    |     └── Event.js
+|    ├── routes/
+|    |     └── eventRoutes.js
+|    └── app.js
 
 ```
+
+#### 1. Classe base
+
+```javascript
+
+class Event {
+  constructor(id, title, date, category) {
+    this.id = id;
+    this.title = title;
+    this.date = new Date(date); 
+    this.category = category; 
+  }
+}
+
+module.exports = Event;
+
+```
+
+Essa é a classe base de Evento.
+
+#### 2. Estrutura básica do Iterator
+
+``` javascript
+
+const Iterator = require('./Iterator');
+
+class EventIterator extends Iterator {
+    constructor(events) {
+        super();
+        this.events = events;
+        this.position = 0;
+    }
+
+    next() {
+        if (this.hasNext()) {
+            return this.events[this.position++];
+        }
+        return null;
+    }
+
+    hasNext() {
+        return this.position < this.events.length;
+    }
+
+    reset() {
+        this.position = 0;
+    }
+}
+
+module.exports = EventIterator;
+
+```
+
+A classe `Iterator` no exemplo acima atua como uma classe base abstrata para o padrão de projeto Iterator. Ela define uma interface que todos os iteradores concretos devem seguir. Os métodos `next` e `hasNext` são fundamentais no padrão de projeto Iterator, pois controlam a navegação sequencial por uma coleção de elementos.
+
+#### 3. Iterador de evento
+
+```javascript
+
+const Iterator = require('./Iterator');
+
+class EventIterator extends Iterator {
+    constructor(events) {
+        super();
+        this.events = events;
+        this.position = 0;
+    }
+
+    next() {
+        if (this.hasNext()) {
+            return this.events[this.position++];
+        }
+        return null;
+    }
+
+    hasNext() {
+        return this.position < this.events.length;
+    }
+
+    reset() {
+        this.position = 0;
+    }
+}
+
+module.exports = EventIterator;
+
+
+```
+
+A classe chamada `EventIterator`, que estende uma classe base `Iterator`. Essa classe é utilizada para percorrer uma lista de eventos (events) de forma sequencial.
+
+#### 4. Filtro de eventos
+
+```javascript
+
+function filterEventsByDateRange(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const iterator = eventCollection.createIterator();
+    const filteredEvents = [];
+
+    while (iterator.hasNext()) {
+        const event = iterator.next();
+        const eventDate = new Date(event.date);
+        if (eventDate >= start && eventDate <= end) {
+            filteredEvents.push(event);
+        }
+    }
+
+    return filteredEvents;
+}
+
+```
+
+A função `filterEventsByDateRange` filtra eventos dentro de um intervalo de datas utilizando o padrão de projeto Iterator. Ela recebe duas datas (`startDate` e `endDate`) e usa um iterador para percorrer a coleção de eventos (`eventCollection`). 
+
 ### Como rodar
 
 ```
@@ -88,86 +216,6 @@ backend/
 ```
 ---
 
-#### 1. **Estrutura para a classe Protótipo**
-```javascript
-class Task {
-  constructor({ id, title, description, startTime }) {
-    this.id = id;
-    this.title = title;
-    this.description = description;
-    this.startTime = startTime;
-  }
-
-  clone(id) {
-    return new Task({
-      id: id,
-      title: this.title,
-      description: this.description,
-      startTime: this.startTime,
-    });
-  }
-}
-
-export default Task;
-
-```
-
-Esta é a classe que tem o método clone para criar as multiplas tarefas.
-
-#### 2. **Controller para tarefas**
-
-```javascript
-
-const tasks = [];
-
-export const createTask = (req, res) => {
-  const { title, startTime, recurrenceRule } = req.body;
-
-  const newTask = new Task({
-    id: v4(),
-    title,
-    startTime: new Date(startTime),
-  });
-
-  tasks.push(newTask);
-  let clonedTasks = [];
-  clonedTasks.push(newTask);
-
-  let occurrencesNumber = Number(recurrenceRule?.occurrences);
-  console.log(occurrencesNumber);
-
-  if (occurrencesNumber > 0) {
-    for (let i = 1; i < occurrencesNumber; i++) {
-      let clonedTask = newTask.clone(v4());
-
-      clonedTask.startTime = new Date(clonedTask.startTime);
-
-      if (recurrenceRule.frequency === 'daily') {
-        clonedTask.startTime.setDate(clonedTask.startTime.getDate() + i);
-      } else if (recurrenceRule.frequency === 'weekly') {
-        clonedTask.startTime.setDate(clonedTask.startTime.getDate() + i * 7);
-      } else if (recurrenceRule.frequency === 'monthly') {
-        clonedTask.startTime.setMonth(clonedTask.startTime.getMonth() + i);
-      } else if (recurrenceRule.frequency === 'yearly') {
-        clonedTask.startTime.setFullYear(
-          clonedTask.startTime.getFullYear() + i
-        );
-      }
-
-      tasks.push(clonedTask);
-      clonedTasks.push(clonedTask);
-    }
-  }
-
-  res.status(200).json(clonedTasks);
-};
-
-```
-
-A `createTask` é responsável por gerenciar as operações da criação das multiplas tarefas.
-
-Esses são os principais componentes do padrão Prototype que foram implementados no código, com suas respectivas responsabilidades e relações. 
-
 ### Imagens
 
 <p style="text-align: center"><b>Figura 1:</b> Testando no Postman - usando filtro dia</p>
@@ -176,25 +224,26 @@ Esses são os principais componentes do padrão Prototype que foram implementado
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b>Carlos Alves, Hugo Queiroz e Vitor Féijo</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 2:</b> Testando no Postman - usando filtro mês </p>
+<p style="text-align: center"><b>Figura 2:</b> Testando no Postman - usando filtro semana </p>
 <div align="center">
   <img src="./images/3.3.Comportamentais/iteradorM.jpeg" width="1050px" >
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b>Carlos Alves, Hugo Queiroz e Vitor Féijo</a>, 2025</p></font>
 
-<p style="text-align: center"><b>Figura 3:</b> Testando no Postman - usando filtro ano</p>
+<p style="text-align: center"><b>Figura 3:</b> Testando no Postman - usando filtro mês</p>
 <div align="center">
-  <img src="./images/3.3.Comportamentais/iteradorA.jpeg" width="1050px" >
+  <img src="./images/3.3.Comportamentais/iteradorY.jpeg" width="1050px" >
 </div>
 <font size="3"><p style="text-align: center"><b>Fonte:</b>Carlos Alves, Hugo Queiroz e Vitor Féijo</a>, 2025</p></font>
 
 ## Referências
 > <a>1.<a/> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br>
-> <a>2.<a/> REFACTORING GURU. *Prototype: Design Patterns.* Disponível em: [https://refactoring.guru/pt-br/design-patterns/prototype](https://refactoring.guru/pt-br/design-patterns/prototype). Acesso em: 06 jan. 2025.. <br>
+> <a>2.<a/> REFACTORING GURU. *Iterator: Design Patterns.* Disponível em: [https://refactoring.guru/pt-br/design-patterns/prototype](https://refactoring.guru/design-patterns/iterator). Acesso em: 06 jan. 2025.. <br>
 
 ## Histórico de Versões
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Estrutura do artefato | [Carlos Alves](https://github.com/CADU110), [Vitor Feijó](https://github.com/vitorfleonardo) e  [Hugo Queiroz](https://github.com/melohugo) |  |
+| `1.0`  | 06/01/2025 | Estrutura do artefato | [Carlos Alves](https://github.com/CADU110), [Vitor Feijó](https://github.com/vitorfleonardo) e  [Hugo Queiroz](https://github.com/melohugo) |  |
+| `1.1`  | 06/01/2025 | Finalizando artefato | [Carlos Alves](https://github.com/CADU110), [Vitor Feijó](https://github.com/vitorfleonardo) e  [Hugo Queiroz](https://github.com/melohugo) |  |
 
