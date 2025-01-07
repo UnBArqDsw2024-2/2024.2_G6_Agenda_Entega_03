@@ -30,7 +30,7 @@ public class LembreteController {
         try {
             Lembrete lembrete = lembreteService.obterLembrete(id);
             if (lembrete != null) {
-                return new ResponseEntity<>("Lembrete encontrado: " + lembrete, HttpStatus.OK);
+                return new ResponseEntity<>("Lembrete encontrado: " + lembrete.getMensagem()+", "+lembrete.getDataHora()+", "+lembrete.getEstado(), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>("Lembrete com ID " + id + " não encontrado.", HttpStatus.NOT_FOUND);
             }
