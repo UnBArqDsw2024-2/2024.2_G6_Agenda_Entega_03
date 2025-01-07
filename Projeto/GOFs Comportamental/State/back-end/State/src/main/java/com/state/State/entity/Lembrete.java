@@ -23,6 +23,13 @@ public class Lembrete {
     @Transient
     private LembreteStateInterface estado;
 
+    // Construtor padrão (sem parâmetros)
+    public Lembrete() {
+        // Inicializa com valores padrão ou pode ser usado para futuras configurações
+        this.estado = new AtivoState(); // Inicia com o estado Ativo
+    }
+
+    // Construtor com parâmetros
     public Lembrete(String mensagem, Date dataHora) {
         this.mensagem = mensagem;
         this.dataHora = dataHora;

@@ -10,13 +10,13 @@
       - [3.1.2. Builder](./PadroesDeProjeto/3.1.Criacionais/Builder.md)
       - [3.1.3. Singleton](./PadroesDeProjeto/3.1.Criacionais/Singleton.md)
 
-    - [3.2. Padrões de Projeto GoFs Estruturais](./PadroesDeProjeto/3.2.GoFsEstruturais.md)
+    - [3.2. Padrões de Projeto GoFs Estruturais](./PadroesDeProjeto/3.2.Estruturais/3.2.GoFsEstruturais.md)
       - [3.2.1. Bridge](./PadroesDeProjeto/3.2.Estruturais/Bridge.md)
       - [3.2.2. Adapter](./PadroesDeProjeto/3.2.Estruturais/Adapter.md)
       - [3.2.3. Proxy](./PadroesDeProjeto/3.2.Estruturais/Proxy.md)
       - [3.2.4. Flyweight](./PadroesDeProjeto/3.2.Estruturais/Flyweight.md)
     
-    - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.GoFsComportamentais.md)
+    - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.Comportamentais/3.3.GoFsComportamentais.md)
       - [3.3.1. Command](./PadroesDeProjeto/3.3.Comportamentais/Command.md)
       - [3.3.2. Observer](./PadroesDeProjeto/3.3.Comportamentais/Observer.md)
       - [3.3.3 State](./PadroesDeProjeto/3.3.Comportamentais/State.md)
