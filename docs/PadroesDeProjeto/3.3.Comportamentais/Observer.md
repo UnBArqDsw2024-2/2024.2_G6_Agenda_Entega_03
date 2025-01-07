@@ -41,13 +41,12 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
 
 ## Modelagem
 
-![Diagrama Observer](https://github.com/UnBArqDsw2024-2/2024.2_G6_Agenda_Entega_03/blob/528378b2ced4579f90c408a871dcd6aa44e8d440/docs/PadroesDeProjeto/images/observer.png)
-
-<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Observer.</p>
+<p style="text-align: center"><b>Figura 1:</b> Diagrama referente a implementação Observer</p>
 <div align="center">
-
+  <img src="./images/3.3.Comportamentais/observer.png" width="1050px" >
 </div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>, 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/JoaoBarreto03">João Barreto</a> e <a href="https://github.com/paulohborba">Paulo Borba</a>,, 2025</p></font>
+
 
 ## Implementação
 
@@ -171,6 +170,19 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
     if __name__ == "__main__":
         app.run(debug=True)
 
+## Resultados
+
+1. Página de Criação e Visualização de Eventos:
+
+![Pagina de Criacao/Visualizacao de Eventos](/2024.2_G6_Agenda_Entega_03/docs/images/3.3.Comportamentais/CrudEventos.png)
+
+2. Visualização do Evento Criado:
+
+![Pagina de Visualizacao Eventos](/2024.2_G6_Agenda_Entega_03/docs/images/3.3.Comportamentais/EditDeleteEventos.png)
+
+3. Notificação de Criação do Evento:
+
+![Notificacao](/2024.2_G6_Agenda_Entega_03/docs/images/3.3.Comportamentais/NotificacaoEvento.png)
 
 ## Referências
 > <a>1.</a> GOF Comportamental - Observer. **Observer Design Pattern**. Disponível em: [Observer Design Pattern](https://sourcemaking.com/design_patterns/observer)  Acesso em: 04/01/2025. <br>
@@ -180,4 +192,4 @@ Essa metodologia, ao combinar o padrão Observer com um CRUD de eventos, permite
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :----: | ---- | --------- | ----- | ------- |
-| `1.0`  | 05/01/2025 | Criacão do artefato | [Paulo Borba](https://github.com/paulohborba) e [João Barreto](https://github.com/JoaoBarreto03) |  |
+| `1.0`  | 05/01/2025 | Criacão do artefato | [Paulo Borba](https://github.com/paulohborba) e [João Barreto](https://github.com/JoaoBarreto03) |  [Bianca Patrocínio](https://github.com/BiancaPatrocinio7) 
