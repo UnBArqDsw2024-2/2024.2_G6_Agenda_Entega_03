@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Lembretes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Lembretes</h1>
+        
+        <section>
+            <h2>Criar Lembrete</h2>
+            <label for="mensagem">Mensagem:</label>
+            <input type="text" id="mensagem" placeholder="Digite a mensagem">
+            <label for="data-hora">Data e Hora:</label>
+            <input type="datetime-local" id="data-hora">
+            <button id="criar-btn">Criar</button>
+        </section>
+
+        <section>
+            <h2>Obter Lembrete</h2>
+            <label for="id-lembrete">ID do Lembrete:</label>
+            <input type="text" id="id-lembrete" placeholder="Digite o ID">
+            <button id="obter-btn">Obter</button>
+        </section>
+
+        <section>
+            <h2>Atualizar Lembrete</h2>
+            <label for="id-atualizar">ID do Lembrete:</label>
+            <input type="text" id="id-atualizar" placeholder="Digite o ID">
+            <label for="mensagem-atualizar">Mensagem:</label>
+            <input type="text" id="mensagem-atualizar" placeholder="Digite a mensagem">
+            <label for="data-hora-atualizar">Data e Hora:</label>
+            <input type="datetime-local" id="data-hora-atualizar">
+            <button id="atualizar-btn">Atualizar</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
