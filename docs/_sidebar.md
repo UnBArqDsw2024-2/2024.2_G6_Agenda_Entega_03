@@ -1,8 +1,6 @@
 <!-- docs/_sidebar.md -->
 
 - [Home](./)
-- [Projetos](./Projetos/Projetos.md)
-- [Participacões](./PadroesDeProjeto/participacoes.md)
 - [Projetos](./projeto.md)
 
 - **Padrões de Projeto**
@@ -25,5 +23,5 @@
       - [3.3.2. Observer](./PadroesDeProjeto/3.3.Comportamentais/Observer.md)
       - [3.3.3 State](./PadroesDeProjeto/3.3.Comportamentais/State.md)
       - [3.3.4. Iterator](./PadroesDeProjeto/3.3.Comportamentais/Iterador.md)
-    - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
+    - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/participacoes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](./PadroesDeProjeto/3.5.IniciativasExtras.md)
