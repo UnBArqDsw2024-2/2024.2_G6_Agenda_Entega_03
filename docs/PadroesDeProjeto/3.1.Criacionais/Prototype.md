@@ -33,6 +33,7 @@ java
 public interface Prototype {
     Prototype clone();
 }
+
 ```
 
 ## Vantagens e Desvantagens 
@@ -84,10 +85,9 @@ Sendo assim existe a necessidade do agendamento de eventos recorrentes envolve a
 Para a criação da modelagem foi utilizado a ferramenta **Lucid** para o diagrama de classes, o que facilitou o processo de abstração e visualização do sistema. 
 
 <p style="text-align: center"><b>Figura 1:</b> Modelo de domínio utilizado no projeto.</p>
-<div align="center">
-<div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/4ccd5935-d4a1-4c06-9a1a-68f158d9aed4" id="IaWGJ19rVl4A"></iframe></div>
+<div align="center"><div style="width: 940px; height: 480px; margin: 10px; position: relative;"><iframe frameborder="0" style="width:100%;height:353px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=prototype.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oohHlQTe0by6IUe3_Q-6BgyOTLuCm1jd%26export%3Ddownload"></iframe></div>
 </div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Fonte:</b><a href="https://github.com/CADU110">Carlos Alves</a>, <a href="https://github.com/melohugo"> Hugo Queiroz</a> e <a href="https://github.com/vitorfleonardo"> Vitor Féijo</a>, 2025</p></font>
 
 ## Código
 
@@ -149,9 +149,6 @@ Esta é a classe que tem o método clone para criar as multiplas tarefas.
 
 ```javascript
 
-import { v4 } from 'uuid';
-import Task from '../models/Task.js';
-
 const tasks = [];
 
 export const createTask = (req, res) => {
@@ -176,9 +173,6 @@ export const createTask = (req, res) => {
 
       clonedTask.startTime = new Date(clonedTask.startTime);
 
-      //new Date(clonedTask.startTime)
-      //if (recurrenceRule.frequency !== 'none') {
-
       if (recurrenceRule.frequency === 'daily') {
         clonedTask.startTime.setDate(clonedTask.startTime.getDate() + i);
       } else if (recurrenceRule.frequency === 'weekly') {
@@ -191,14 +185,10 @@ export const createTask = (req, res) => {
         );
       }
 
-      //}
-
       tasks.push(clonedTask);
       clonedTasks.push(clonedTask);
     }
   }
-
-  console.log(tasks);
 
   res.status(200).json(clonedTasks);
 };
@@ -237,20 +227,27 @@ Esses são os principais componentes do padrão Prototype que foram implementado
 
 ### Imagens
 
-<p style="text-align: center"><b>Figura 2:</b> Testando Via Postman - Cadastro com email e senha</p>
+<p style="text-align: center"><b>Figura 1:</b> Testando com frotend básico - criando multiplas tarefas</p>
 <div align="center">
-  <img src="./images/3.1.Criacionais/image.png" width="1050px" >
+  <img src="./images/3.1.Criacionais/prot01.png" width="1050px" >
 </div>
-<font size="3"><p style="text-align: center"><b>Fonte:</b> <a href="https://github.com/BiancaPatrocinio7">Bianca Patrocínio</a>, 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Fonte:</b>Carlos Alves, Hugo Queiroz e Vitor Féijo</a>, 2025</p></font>
+
+<p style="text-align: center"><b>Figura 2:</b> Testando com frotend básico - criando multiplas tarefas</p>
+<div align="center">
+  <img src="./images/3.1.Criacionais/prot03.png" width="1050px" >
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b>Carlos Alves, Hugo Queiroz e Vitor Féijo</a>, 2025</p></font>
+
+<p style="text-align: center"><b>Figura 3:</b> Testando com frotend básico - criando multiplas tarefas</p>
+<div align="center">
+  <img src="./images/3.1.Criacionais/prot02.png" width="1050px" >
+</div>
+<font size="3"><p style="text-align: center"><b>Fonte:</b>Carlos Alves, Hugo Queiroz e Vitor Féijo</a>, 2025</p></font>
 
 ## Referências
 > <a>1.<a/> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. 1. ed. Boston: Addison-Wesley, 1994. <br>
-> <a>2.<a/> FREEMAN, Eric; FREEMAN, Elisabeth Robson. Head First Design Patterns: A Brain-Friendly Guide. 2. ed. Sebastopol: O'Reilly Media, 2020. <br>
-> <a>3.<a/> ROYTUTS. Abstract Design Factory Pattern in Java. Disponível em: [https://roytuts.com/abstract-design-factory-pattern-in-java/](https://roytuts.com/abstract-design-factory-pattern-in-java/). Acesso em: 05 jan. 2025.<br>
-> <a>4.<a/> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. *Design Patterns: Elements of Reusable Object-Oriented Software* (Gang of Four). 1. ed. Boston: Addison-Wesley, 1994. <br>
-> <a>5.<a/> Refactoring Guru. *Abstract Factory Pattern*. Disponível em: [https://refactoring.guru/design-patterns/abstract-factory](https://refactoring.guru/design-patterns/abstract-factory). Acesso em: 05 jan. 2025. <br>
-> <a>6.<a/> Wikipedia. *Abstract Factory Pattern*. Disponível em: [https://en.wikipedia.org/wiki/Abstract_factory_pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern). Acesso em: 05 jan. 2025. <br>
-> <a>7.<a/> SourceMaking. *Abstract Factory*. Disponível em: [https://sourcemaking.com/design_patterns/abstract_factory](https://sourcemaking.com/design_patterns/abstract_factory). Acesso em: 05 jan. 2025.
+> <a>2.<a/> REFACTORING GURU. *Prototype: Design Patterns.* Disponível em: [https://refactoring.guru/pt-br/design-patterns/prototype](https://refactoring.guru/pt-br/design-patterns/prototype). Acesso em: 06 jan. 2025.. <br>
 
 ## Histórico de Versões
 
