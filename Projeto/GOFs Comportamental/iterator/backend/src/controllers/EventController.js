@@ -42,8 +42,6 @@ const EventController = {
 
     getEventsByWeek(req, res) {
         const { startDate, endDate } = req.body;
-        console.log(startDate)
-        console.log(endDate)
         const events = filterEventsByDateRange(startDate, endDate);
         res.json(events);
     },
